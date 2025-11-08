@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 205 70% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 205 70% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 205 70% 25%;
+
+    --primary: 205 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 190 95% 60%;
+    --accent-cyan: 190 95% 55%;
+    --accent-cyan-light: 190 95% 70%;
+
+    --secondary: 195 50% 92%;
+    --secondary-foreground: 205 70% 25%;
+
+    --muted: 195 30% 96%;
+    --muted-foreground: 205 40% 45%;
+
+    --accent: 190 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 30% 88%;
+    --input: 195 30% 88%;
+    --ring: 205 85% 45%;
+
+    --radius: 0.75rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(205 85% 45%), hsl(190 95% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(195 40% 98%));
+    --shadow-glow: 0 0 60px hsl(190 95% 60% / 0.3);
+    --shadow-card: 0 10px 40px hsl(205 30% 30% / 0.1);
+  }
+
+  .dark {
+    --background: 205 60% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 205 50% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 205 50% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 190 95% 60%;
+    --primary-foreground: 205 60% 10%;
+    
+    --primary-glow: 190 95% 70%;
+    --accent-cyan: 190 95% 60%;
+    --accent-cyan-light: 190 95% 75%;
+
+    --secondary: 205 40% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 205 40% 15%;
+    --muted-foreground: 195 20% 70%;
+
+    --accent: 190 95% 60%;
+    --accent-foreground: 205 60% 10%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 205 40% 20%;
+    --input: 205 40% 20%;
+    --ring: 190 95% 60%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(205 85% 50%), hsl(190 95% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(205 60% 8%), hsl(205 50% 12%));
+    --shadow-glow: 0 0 80px hsl(190 95% 70% / 0.4);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-glow;
+  }
+}
