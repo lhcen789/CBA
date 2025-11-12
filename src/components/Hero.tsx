@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Check, Shield, Award, Calendar, Users, Activity, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 // Lab-related hero image from Unsplash (free to use)
 const heroImage = "https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
 
@@ -20,46 +21,73 @@ export const Hero = () => {
               <span className="text-gradient block mt-1 sm:mt-2">Notre Priorité</span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Centre de biologie Agadir est un laboratoire d'analyses médicales moderne offrant 
-              des services de diagnostic de haute qualité avec des résultats rapides et fiables.
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              Centre de Biologie Médicale Agadir est un établissement de santé moderne et équipé des dernières technologies, offrant une large gamme d'analyses médicales avec des résultats rapides et fiables. Notre laboratoire est dirigé par des professionnels qualifiés et expérimentés, garantissant un service de qualité supérieure.
             </p>
-            
-            <div className="flex flex-nowrap items-center gap-2 sm:gap-3 md:gap-4 overflow-x-auto pb-2 -mx-2 px-2 sm:mx-0 sm:px-0 sm:pb-0">
-              <Button 
-                size="lg" 
-                className="gradient-primary text-white group h-10 sm:h-12 px-4 sm:px-6 text-xs sm:text-base whitespace-nowrap flex-shrink-0" 
-                asChild
-              >
-                <Link to="/appointments" className="flex items-center">
-                  Prendre RDV
-                  <ArrowRight className="ml-1.5 sm:ml-2 w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-0.5 sm:group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="h-10 sm:h-12 px-4 sm:px-6 text-xs sm:text-base whitespace-nowrap flex-shrink-0"
-                asChild
-              >
-                <Link to="/services" className="flex items-center">
-                  Nos Services
-                </Link>
-              </Button>
+
+            {/* Key Features */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+              {[
+                { icon: Check, text: 'Analyses biologiques' },
+                { icon: Shield, text: 'Biologie de la reproduction' },
+                { icon: Award, text: 'Équipe médicale qualifiée' },
+                { icon: Calendar, text: 'Prélèvements à domicile' }
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    className="flex items-center gap-2 bg-background/50 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-border/20"
+                  >
+                    <div className="bg-primary/10 p-1.5 rounded-lg">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-medium">{item.text}</span>
+                  </motion.div>
+                );
+              })}
             </div>
             
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 pt-6 sm:pt-8">
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">50 000+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Analyses Réalisées</div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 md:gap-4 overflow-x-auto pb-2 -mx-2 px-2 sm:mx-0 sm:px-0 sm:pb-0">
+                <Button 
+                  size="lg" 
+                  className="gradient-primary text-white group h-10 sm:h-12 px-4 sm:px-6 text-xs sm:text-base whitespace-nowrap flex-shrink-0" 
+                  asChild
+                >
+                  <Link to="/appointments" className="flex items-center">
+                    Prendre RDV
+                    <ArrowRight className="ml-1.5 sm:ml-2 w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-0.5 sm:group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="h-10 sm:h-12 px-4 sm:px-6 text-xs sm:text-base whitespace-nowrap flex-shrink-0"
+                  asChild
+                >
+                  <Link to="/services" className="flex items-center">
+                    Nos Services
+                  </Link>
+                </Button>
               </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">30+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Professionnels</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">2+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Années d'Expérience</div>
+
+              {/* Trust Badge */}
+              <div className="flex items-center gap-3 bg-background/50 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-border/20">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center">
+                      <Users className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <p className="text-xs font-medium">+5,000 patients</p>
+                  <p className="text-[10px] text-muted-foreground">Nous font confiance</p>
+                </div>
               </div>
             </div>
           </div>
