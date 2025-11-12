@@ -55,50 +55,57 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Nos <span className="text-gradient">Bilans</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
             Des bilans complets adaptés à vos besoins de santé, réalisés par des 
             professionnels qualifiés avec des équipements de dernière génération.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {analyses.map((analyse, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover-lift border-border/50 bg-card shadow-card group"
+              className="overflow-hidden hover-lift border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow duration-300 group h-full flex flex-col"
             >
-              <div className="relative overflow-hidden aspect-[4/3]">
+              <div className="relative overflow-hidden aspect-[4/3] w-full">
                 <img
                   src={analyse.image}
                   alt={analyse.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                  <Button size="sm" className="gradient-primary text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 sm:p-6">
+                  <Button 
+                    size="sm" 
+                    className="gradient-primary text-white text-xs sm:text-sm h-8 sm:h-9 px-3 sm:px-4"
+                  >
                     Plus d'Infos
-                    <CheckCircle2 size={16} className="ml-2" />
+                    <CheckCircle2 className="ml-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </Button>
                 </div>
               </div>
               
-              <div className="p-6">
-                <div className="text-sm text-primary font-semibold mb-2">
+              <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col">
+                <div className="text-xs sm:text-sm text-primary font-semibold mb-1.5 sm:mb-2">
                   {analyse.category}
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{analyse.title}</h3>
-                <p className="text-muted-foreground mb-4">{analyse.description}</p>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-foreground">
+                  {analyse.title}
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 flex-grow">
+                  {analyse.description}
+                </p>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-auto pt-2">
                   {analyse.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
+                      className="text-[10px] sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 bg-muted/40 rounded-full text-foreground/80 whitespace-nowrap"
                     >
                       {tag}
                     </span>
@@ -111,15 +118,27 @@ export const Projects = () => {
 
         <div className="bg-secondary/30 rounded-3xl p-12">
           <h3 className="text-3xl font-bold mb-8 text-center">Bilans Populaires</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {bilansPopulaires.map((bilan, index) => (
-              <div key={index} className="space-y-3">
-                <h4 className="text-xl font-bold">{bilan.title}</h4>
-                <p className="text-muted-foreground text-sm">{bilan.description}</p>
-                <div className="text-primary font-semibold text-sm">{bilan.metric}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {bilansPopulaires.map((bilan, index) => (
+            <div
+              key={index}
+              className="bg-muted/20 p-4 sm:p-5 md:p-6 rounded-lg border border-border/30 hover:border-primary/30 transition-colors group"
+            >
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full gradient-primary flex items-center justify-center text-white text-lg sm:text-xl font-bold mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                {index + 1}
               </div>
-            ))}
-          </div>
+              <h4 className="text-base sm:text-lg font-semibold mb-1.5 sm:mb-2 text-foreground">
+                {bilan.title}
+              </h4>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3 leading-relaxed">
+                {bilan.description}
+              </p>
+              <div className="text-xs sm:text-sm font-medium text-primary">
+                {bilan.metric}
+              </div>
+            </div>
+          ))}
+        </div>
           
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" className="group">
