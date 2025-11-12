@@ -84,30 +84,30 @@ const Index = () => {
       <Services />
       
       {/* Advantages Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-14 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-foreground">
               Pourquoi Nous Choisir ?
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Des avantages qui font la différence pour votre santé
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
             {advantages.map((advantage, index) => (
               <Card 
                 key={index} 
-                className="group p-5 sm:p-6 lg:p-8 text-center hover-lift border-border transition-all duration-300 hover:shadow-lg"
+                className="group p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 text-center hover-lift border-border/50 transition-all duration-300 hover:shadow-md hover:border-primary/20"
               >
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <advantage.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <advantage.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-foreground">
                   {advantage.title}
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed">
                   {advantage.description}
                 </p>
               </Card>
@@ -119,34 +119,34 @@ const Index = () => {
       <Projects />
       
       {/* Testimonials Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-14 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-foreground">
               Témoignages de Nos Patients
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               Ce que disent nos patients satisfaits
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index} 
-                className="p-6 sm:p-7 lg:p-8 hover-lift border-border transition-all duration-300 hover:shadow-lg flex flex-col h-full"
+                className="p-5 sm:p-6 md:p-7 lg:p-8 hover-lift border-border/50 transition-all duration-300 hover:shadow-md hover:border-primary/20 flex flex-col h-full"
               >
                 <div className="flex mb-3 sm:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-xl sm:text-2xl text-primary">★</span>
+                    <span key={i} className="text-lg sm:text-xl text-primary">★</span>
                   ))}
                 </div>
-                <p className="text-foreground/90 mb-5 sm:mb-6 text-sm sm:text-base leading-relaxed flex-grow italic">
+                <p className="text-foreground/90 mb-4 sm:mb-5 text-sm sm:text-base leading-relaxed flex-grow italic">
                   "{testimonial.content}"
                 </p>
-                <div className="mt-auto pt-4 border-t border-border/30">
-                  <p className="font-bold text-foreground text-base sm:text-lg">{testimonial.name}</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
+                <div className="mt-auto pt-3 sm:pt-4 border-t border-border/30">
+                  <p className="font-bold text-foreground text-sm sm:text-base md:text-lg">{testimonial.name}</p>
+                  <p className="text-xs text-muted-foreground">{testimonial.role}</p>
                 </div>
               </Card>
             ))}
@@ -157,60 +157,57 @@ const Index = () => {
       <Team />
       
       {/* FAQ Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-14 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-foreground">
               Questions Fréquentes
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               Trouvez les réponses à vos questions
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <Card 
                 key={index} 
-                className="p-5 sm:p-6 border-border hover:shadow-md transition-shadow duration-300"
+                className="p-4 sm:p-5 md:p-6 border-border/50 hover:shadow-md hover:border-primary/20 transition-all duration-300"
               >
                 <details className="group">
                   <summary className="flex justify-between items-center cursor-pointer">
-                    <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold sm:font-bold text-foreground pr-2">
                       {faq.question}
                     </h3>
-                    <div className="w-6 h-6 flex items-center justify-center text-primary">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 flex items-center justify-center text-primary">
                       <svg 
-                        className="w-4 h-4 transition-transform duration-300 group-open:rotate-180" 
+                        className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-open:rotate-180" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
+                        strokeWidth={2}
                       >
                         <path 
                           strokeLinecap="round" 
                           strokeLinejoin="round" 
-                          strokeWidth={2} 
                           d="M19 9l-7 7-7-7" 
                         />
                       </svg>
                     </div>
                   </summary>
-                  <div className="pt-4 mt-2 text-muted-foreground border-t border-border/30">
-                    <p className="text-sm sm:text-base">{faq.answer}</p>
+                  <div className="pt-3 sm:pt-4 mt-2 text-muted-foreground border-t border-border/30">
+                    <p className="text-xs sm:text-sm md:text-base">{faq.answer}</p>
                   </div>
                 </details>
               </Card>
             ))}
           </div>
           
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-6">
-              Vous ne trouvez pas de réponse à votre question ?
-            </p>
+          <div className="text-center mt-12">
             <Button 
-              asChild 
-              variant="outline" 
+              variant="outline"
               className="border-primary text-primary hover:bg-primary/10"
+              asChild
             >
               <Link to="/contact">
                 Contactez-nous
