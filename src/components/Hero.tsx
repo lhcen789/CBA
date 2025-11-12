@@ -25,24 +25,24 @@ export const Hero = () => {
               des services de diagnostic de haute qualité avec des résultats rapides et fiables.
             </p>
             
-            <div className="flex flex-wrap gap-3 sm:gap-4">
+            <div className="flex flex-nowrap items-center gap-2 sm:gap-3 md:gap-4 overflow-x-auto pb-2 -mx-2 px-2 sm:mx-0 sm:px-0 sm:pb-0">
               <Button 
                 size="lg" 
-                className="gradient-primary text-white group h-11 sm:h-12 px-6 text-sm sm:text-base" 
+                className="gradient-primary text-white group h-10 sm:h-12 px-4 sm:px-6 text-xs sm:text-base whitespace-nowrap flex-shrink-0" 
                 asChild
               >
                 <Link to="/appointments" className="flex items-center">
-                  Prendre Rendez-vous
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  Prendre RDV
+                  <ArrowRight className="ml-1.5 sm:ml-2 w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-0.5 sm:group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="h-11 sm:h-12 px-6 text-sm sm:text-base"
+                className="h-10 sm:h-12 px-4 sm:px-6 text-xs sm:text-base whitespace-nowrap flex-shrink-0"
                 asChild
               >
-                <Link to="/services">
+                <Link to="/services" className="flex items-center">
                   Nos Services
                 </Link>
               </Button>
@@ -58,7 +58,7 @@ export const Hero = () => {
                 <div className="text-xs sm:text-sm text-muted-foreground">Professionnels</div>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">15+</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">2+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">Années d'Expérience</div>
               </div>
             </div>
