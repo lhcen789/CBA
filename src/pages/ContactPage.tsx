@@ -40,13 +40,13 @@ const ContactPage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 gradient-hero">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Contactez-<span className="text-gradient">Nous</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               Besoin d'informations sur nos analyses? Notre équipe est à votre disposition 
               pour répondre à toutes vos questions.
             </p>
@@ -55,162 +55,259 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-20">
-            <Card className="p-8 hover-lift shadow-card border-border/50 text-center">
-              <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-6">
-                <Phone className="text-white" size={28} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Téléphone</h3>
-              <p className="text-muted-foreground mb-4 text-sm">Appelez-nous pendant nos horaires d'ouverture</p>
-              <a href="tel:+212528XXXXXX" className="text-primary hover:underline font-semibold">
-                +212 528-XX-XX-XX
-              </a>
-            </Card>
-
-            <Card className="p-8 hover-lift shadow-card border-border/50 text-center">
-              <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-6">
-                <Mail className="text-white" size={28} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Email</h3>
-              <p className="text-muted-foreground mb-4 text-sm">Envoyez-nous un message</p>
-              <a href="mailto:contact@centrebiologie-agadir.ma" className="text-primary hover:underline font-semibold">
-                contact@centrebiologie-agadir.ma
-              </a>
-            </Card>
-
-            <Card className="p-8 hover-lift shadow-card border-border/50 text-center">
-              <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-6">
-                <MapPin className="text-white" size={28} />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Adresse</h3>
-              <p className="text-muted-foreground mb-4 text-sm">Visitez notre laboratoire</p>
-              <p className="font-semibold">Avenue Hassan II, Agadir</p>
-            </Card>
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-20">
+            {[
+              {
+                icon: Phone,
+                title: "Téléphone",
+                description: "Appelez-nous pendant nos horaires d'ouverture",
+                content: "+212 528-XX-XX-XX",
+                href: "tel:+212528XXXXXX"
+              },
+              {
+                icon: Mail,
+                title: "Email",
+                description: "Envoyez-nous un message",
+                content: "contact@centrebiologie-agadir.ma",
+                href: "mailto:contact@centrebiologie-agadir.ma"
+              },
+              {
+                icon: MapPin,
+                title: "Adresse",
+                description: "Visitez notre laboratoire",
+                content: "Avenue Hassan II, Agadir"
+              }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className="p-6 sm:p-8 hover-lift border-border/50 hover:border-primary/20 transition-all duration-300 text-center group"
+                >
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-105 transition-transform">
+                    <Icon className="text-white w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
+                    {item.description}
+                  </p>
+                  {item.href ? (
+                    <a 
+                      href={item.href} 
+                      className="text-sm sm:text-base text-primary hover:underline font-medium inline-block"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-sm sm:text-base font-medium text-foreground">
+                      {item.content}
+                    </p>
+                  )}
+                </Card>
+              );
+            })}
           </div>
 
           {/* Main Contact Form */}
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <Card className="p-8 lg:p-12 shadow-card border-border/50">
-              <h2 className="text-3xl font-bold mb-6">Envoyez-nous un Message</h2>
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-6xl mx-auto">
+            <Card className="p-6 sm:p-8 md:p-10 lg:p-12 shadow-card border-border/50">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">
+                Envoyez-nous un Message
+              </h2>
               
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                      Prénom *
+              <form className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1.5">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-foreground/90">
+                      Prénom <span className="text-destructive">*</span>
                     </label>
-                    <Input id="firstName" placeholder="Mohammed" required />
+                    <Input 
+                      id="firstName" 
+                      placeholder="Mohammed" 
+                      className="h-10 sm:h-11 text-sm sm:text-base"
+                      required 
+                    />
                   </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                      Nom *
+                  <div className="space-y-1.5">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-foreground/90">
+                      Nom <span className="text-destructive">*</span>
                     </label>
-                    <Input id="lastName" placeholder="Alami" required />
+                    <Input 
+                      id="lastName" 
+                      placeholder="Alami" 
+                      className="h-10 sm:h-11 text-sm sm:text-base"
+                      required 
+                    />
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email *
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground/90">
+                    Email <span className="text-destructive">*</span>
                   </label>
-                  <Input id="email" type="email" placeholder="exemple@email.com" required />
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="exemple@email.com" 
+                    className="h-10 sm:h-11 text-sm sm:text-base"
+                    required 
+                  />
                 </div>
 
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                    Téléphone *
+                <div className="space-y-1.5">
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground/90">
+                    Téléphone <span className="text-destructive">*</span>
                   </label>
-                  <Input id="phone" type="tel" placeholder="+212 6XX-XXXXXX" required />
+                  <Input 
+                    id="phone" 
+                    type="tel" 
+                    placeholder="+212 6XX-XXXXXX" 
+                    className="h-10 sm:h-11 text-sm sm:text-base"
+                    required 
+                  />
                 </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Sujet *
+                <div className="space-y-1.5">
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/90">
+                    Sujet <span className="text-destructive">*</span>
                   </label>
-                  <Input id="subject" placeholder="Demande d'information" required />
+                  <Input 
+                    id="subject" 
+                    placeholder="Demande d'information" 
+                    className="h-10 sm:h-11 text-sm sm:text-base"
+                    required 
+                  />
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message *
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground/90">
+                    Message <span className="text-destructive">*</span>
                   </label>
                   <Textarea
                     id="message"
                     placeholder="Décrivez votre demande..."
-                    rows={6}
+                    rows={5}
+                    className="text-sm sm:text-base min-h-[120px]"
                     required
                   />
                 </div>
 
-                <Button size="lg" className="w-full gradient-primary text-white group">
-                  Envoyer le Message
-                  <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-                </Button>
+                <div className="pt-2">
+                  <Button 
+                    size="lg" 
+                    className="w-full gradient-primary text-white h-11 sm:h-12 text-sm sm:text-base font-medium group"
+                  >
+                    Envoyer le Message
+                    <Send className="ml-2 group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
+                  </Button>
+                </div>
 
-                <p className="text-sm text-muted-foreground text-center">
+                <p className="text-xs sm:text-sm text-muted-foreground text-center">
                   Nous répondons généralement sous 24 heures
                 </p>
               </form>
             </Card>
 
-            <div className="space-y-8">
-              <Card className="p-8 shadow-card border-border/50">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-white" size={24} />
+            <div className="space-y-6 sm:space-y-8">
+              <Card className="p-6 sm:p-8 shadow-card border-border/50">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <MapPin className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-foreground">
+                        Notre Adresse
+                      </h3>
+                      <div className="space-y-0.5 sm:space-y-1 text-sm sm:text-base">
+                        <p className="text-muted-foreground">Avenue Hassan II</p>
+                        <p className="text-muted-foreground">Agadir 80000</p>
+                        <p className="text-muted-foreground">Maroc</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold mb-2">Notre Adresse</h3>
-                    <p className="text-muted-foreground">Avenue Hassan II</p>
-                    <p className="text-muted-foreground">Agadir 80000</p>
-                    <p className="text-muted-foreground">Maroc</p>
-                  </div>
-                </div>
 
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-2">Téléphone</h3>
-                    <p className="text-muted-foreground mb-1">+212 528-XX-XX-XX</p>
-                    <p className="text-muted-foreground">+212 6XX-XX-XX-XX</p>
-                  </div>
-                </div>
+                  <div className="h-px bg-border/50 w-full"></div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-white" size={24} />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Phone className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-foreground">
+                        Téléphone
+                      </h3>
+                      <div className="space-y-0.5 sm:space-y-1">
+                        <a 
+                          href="tel:+212528XXXXXX" 
+                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block"
+                        >
+                          +212 528-XX-XX-XX
+                        </a>
+                        <a 
+                          href="tel:+2126XXXXXXXX" 
+                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block"
+                        >
+                          +212 6XX-XX-XX-XX
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold mb-2">Email</h3>
-                    <p className="text-muted-foreground mb-1">contact@centrebiologie-agadir.ma</p>
-                    <p className="text-muted-foreground">resultats@centrebiologie-agadir.ma</p>
+
+                  <div className="h-px bg-border/50 w-full"></div>
+
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Mail className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-foreground">
+                        Email
+                      </h3>
+                      <div className="space-y-0.5 sm:space-y-1">
+                        <a 
+                          href="mailto:contact@centrebiologie-agadir.ma" 
+                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block break-all"
+                        >
+                          contact@centrebiologie-agadir.ma
+                        </a>
+                        <a 
+                          href="mailto:resultats@centrebiologie-agadir.ma" 
+                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block break-all"
+                        >
+                          resultats@centrebiologie-agadir.ma
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-8 shadow-card border-border/50">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-white" size={24} />
+              <Card className="p-6 sm:p-8 shadow-card border-border/50">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Clock className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <div>
-                    <h3 className="font-bold mb-3">Horaires d'Ouverture</h3>
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex justify-between gap-8">
-                        <span>Lundi - Vendredi</span>
-                        <span className="font-semibold">7h00 - 19h00</span>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4 text-foreground">
+                      Heures d'Ouverture
+                    </h3>
+                    <div className="space-y-2 sm:space-y-3 text-sm sm:text-base">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Lundi - Vendredi</span>
+                        <span className="font-medium text-foreground">8h00 - 19h00</span>
                       </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Samedi</span>
-                        <span className="font-semibold">8h00 - 13h00</span>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Samedi</span>
+                        <span className="font-medium text-foreground">9h00 - 17h00</span>
                       </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Dimanche</span>
-                        <span className="font-semibold">Fermé</span>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Dimanche</span>
+                        <span className="font-medium text-primary">Urgences</span>
                       </div>
                     </div>
                   </div>
@@ -222,19 +319,21 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 md:py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Questions Fréquentes</h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-foreground">
+              Questions Fréquentes
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">
               Réponses rapides aux questions courantes
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 shadow-card border-border/50">
-                <h3 className="text-lg font-bold mb-3">{faq.question}</h3>
+              <Card key={index} className="p-6 shadow-card border-border/50 hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-bold mb-3 text-foreground">{faq.question}</h3>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </Card>
             ))}

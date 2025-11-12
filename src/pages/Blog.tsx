@@ -9,65 +9,79 @@ import { Calendar, Clock, User, ArrowRight, Search } from "lucide-react";
 
 const Blog = () => {
   const featuredPost = {
+    id: "depistage-precoce-diabete",
     title: "L'importance du Dépistage Précoce du Diabète",
-    excerpt: "Découvrez pourquoi le dépistage régulier de la glycémie est essentiel pour prévenir les complications du diabète et maintenir une bonne santé.",
+    excerpt: "Découvrez pourquoi le dépistage précoce du diabète est essentiel pour prévenir les complications et maintenir une bonne santé.",
     category: "Prévention",
     date: "15 Décembre 2024",
-    readTime: "8 min de lecture",
+    readTime: "12 min de lecture",
     author: "Dr. Amina Benali",
     image: "/placeholder.svg",
   };
 
   const posts = [
     {
+      id: "comprendre-analyses-sanguines",
       title: "Comprendre vos Résultats d'Analyses Sanguines",
-      excerpt: "Guide complet pour interpréter correctement vos résultats de NFS, glycémie et bilan lipidique.",
+      excerpt: "Un guide complet pour interpréter vos analyses sanguines et comprendre ce que signifient les différents paramètres.",
       category: "Éducation",
       date: "12 Décembre 2024",
-      readTime: "6 min de lecture",
+      readTime: "15 min de lecture",
       author: "Dr. Karim Alami",
+      image: "/placeholder.svg",
     },
     {
+      id: "bilan-thyroidien-quand-pourquoi",
       title: "Le Bilan Thyroïdien: Quand et Pourquoi?",
-      excerpt: "Tout ce qu'il faut savoir sur les analyses thyroïdiennes et leur importance pour votre santé.",
-      category: "Hormonologie",
+      excerpt: "Tout savoir sur le bilan thyroïdien, ses indications et comment interpréter les résultats.",
+      category: "Endocrinologie",
       date: "10 Décembre 2024",
-      readTime: "10 min de lecture",
-      author: "Dr. Amina Benali",
-    },
-    {
-      title: "Prévention des Infections Urinaires",
-      excerpt: "Conseils pratiques et importance de l'ECBU pour détecter et traiter rapidement les infections.",
-      category: "Microbiologie",
-      date: "8 Décembre 2024",
-      readTime: "5 min de lecture",
-      author: "Dr. Hassan Idrissi",
-    },
-    {
-      title: "Le Bilan Prénuptial: Préparez votre Avenir",
-      excerpt: "L'importance des analyses avant le mariage pour une vie de couple en bonne santé.",
-      category: "Prévention",
-      date: "5 Décembre 2024",
-      readTime: "7 min de lecture",
-      author: "Dr. Amina Benali",
-    },
-    {
-      title: "Cholestérol: Ami ou Ennemi?",
-      excerpt: "Comprendre les différents types de cholestérol et comment maintenir un niveau optimal.",
-      category: "Biochimie",
-      date: "3 Décembre 2024",
       readTime: "12 min de lecture",
-      author: "Dr. Karim Alami",
+      author: "Dr. Amina Benali",
+      image: "/placeholder.svg",
     },
     {
+      id: "prevention-infections-urinaires",
+      title: "Prévention des Infections Urinaires",
+      excerpt: "Conseils pratiques pour prévenir les infections urinaires et maintenir une bonne santé urinaire.",
+      category: "Urologie",
+      date: "8 Décembre 2024",
+      readTime: "10 min de lecture",
+      author: "Dr. Hassan Idrissi",
+      image: "/placeholder.svg",
+    },
+    {
+      id: "bilan-prenuptial",
+      title: "Le Bilan Prénuptial: Préparez votre Avenir",
+      excerpt: "Pourquoi et comment réaliser un bilan prénuptial pour aborder le mariage en toute sérénité.",
+      category: "Santé familiale",
+      date: "5 Décembre 2024",
+      readTime: "14 min de lecture",
+      author: "Dr. Amina Benali",
+      image: "/placeholder.svg",
+    },
+    {
+      id: "cholesterol-ami-ennemi",
+      title: "Cholestérol: Ami ou Ennemi?",
+      excerpt: "Comprendre le rôle du cholestérol dans l'organisme et comment le maintenir à un niveau sain.",
+      category: "Cardiologie",
+      date: "3 Décembre 2024",
+      readTime: "13 min de lecture",
+      author: "Dr. Karim Alami",
+      image: "/placeholder.svg",
+    },
+    {
+      id: "hemogramme-decrypte",
       title: "L'Hémogramme Décrypté",
-      excerpt: "Comprendre chaque paramètre de votre numération formule sanguine et son importance.",
+      excerpt: "Guide complet pour comprendre votre hémogramme et interpréter chaque paramètre.",
       category: "Hématologie",
       date: "1 Décembre 2024",
-      readTime: "9 min de lecture",
+      readTime: "15 min de lecture",
       author: "Dr. Hassan Idrissi",
+      image: "/placeholder.svg",
     },
     {
+      id: "tests-covid-pcr-antigenique",
       title: "Tests COVID-19: PCR vs Antigénique",
       excerpt: "Différences, avantages et quand utiliser chaque type de test de dépistage COVID-19.",
       category: "Virologie",
@@ -76,6 +90,7 @@ const Blog = () => {
       author: "Dr. Amina Benali",
     },
     {
+      id: "fertilite-analyses-essentielles",
       title: "Fertilité: Les Analyses Essentielles",
       excerpt: "Guide des analyses de fertilité pour couples souhaitant concevoir un enfant.",
       category: "Hormonologie",
@@ -84,6 +99,7 @@ const Blog = () => {
       author: "Dr. Karim Alami",
     },
     {
+      id: "preparation-analyses-conseils",
       title: "Préparation aux Analyses: Conseils Pratiques",
       excerpt: "Comment bien se préparer avant une prise de sang pour des résultats optimaux.",
       category: "Conseils",
@@ -174,9 +190,11 @@ const Blog = () => {
                   </div>
                 </div>
                 
-                <Button className="gradient-primary text-white w-fit group">
-                  Lire l'Article
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                <Button asChild className="gradient-primary text-white w-fit group">
+                  <Link to={`/blog/${featuredPost.id}`}>
+                    Lire l'Article
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -210,16 +228,17 @@ const Blog = () => {
                 {posts.map((post, index) => (
                   <Card key={index} className="p-6 hover-lift shadow-card border-border/50">
                     <Badge className="mb-4">{post.category}</Badge>
-                    <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer">
-                      {post.title}
-                    </h3>
+                    <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                     <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">{post.category}</span>
+                      <Button asChild variant="link" className="p-0 h-auto">
+                        <Link to={`/blog/${post.id}`}>
+                          Lire la suite <ArrowRight size={16} className="ml-1" />
+                        </Link>
+                      </Button>
+                    </div>
                     <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                      <div className="flex items-center gap-2">
-                        <User size={14} />
-                        <span>{post.author}</span>
-                      </div>
                       <div className="flex items-center gap-2">
                         <Calendar size={14} />
                         <span>{post.date}</span>
@@ -230,9 +249,11 @@ const Blog = () => {
                       </div>
                     </div>
                     
-                    <Button variant="outline" className="group">
-                      Read More
-                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+                    <Button asChild variant="outline" className="group">
+                      <Link to={`/blog/${post.id}`}>
+                        Lire la suite
+                        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+                      </Link>
                     </Button>
                   </Card>
                 ))}

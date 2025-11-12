@@ -9,93 +9,93 @@ import { MapPin, Briefcase, Clock, ArrowRight, Heart, Zap, Users, TrendingUp, Co
 const Careers = () => {
   const openings = [
     {
-      title: "Senior UI/UX Designer",
-      department: "Design",
-      location: "Remote",
-      type: "Full-time",
-      description: "Lead design initiatives for enterprise clients. Create beautiful, intuitive interfaces and design systems.",
+      title: "Biologiste Moléculaire",
+      department: "Laboratoire",
+      location: "Agadir, Maroc",
+      type: "Temps plein",
+      description: "Conduire des analyses de biologie moléculaire et participer à la recherche et développement.",
     },
     {
-      title: "Full Stack Developer",
-      department: "Engineering",
-      location: "San Francisco, CA / Remote",
-      type: "Full-time",
-      description: "Build scalable web applications using React, Node.js, and modern cloud technologies.",
+      title: "Technicien de Laboratoire",
+      department: "Laboratoire",
+      location: "Agadir, Maroc",
+      type: "Temps plein",
+      description: "Effectuer des analyses biologiques et maintenir les équipements de laboratoire.",
     },
     {
-      title: "Machine Learning Engineer",
-      department: "AI & Data",
-      location: "Remote",
-      type: "Full-time",
-      description: "Develop and deploy ML models for production systems. Work on cutting-edge AI applications.",
+      title: "Responsable Assurance Qualité",
+      department: "Qualité",
+      location: "Agadir, Maroc",
+      type: "Temps plein",
+      description: "Assurer le respect des normes de qualité et des procédures du laboratoire.",
     },
     {
-      title: "Product Manager",
-      department: "Product",
-      location: "New York, NY / Remote",
-      type: "Full-time",
-      description: "Drive product strategy and roadmap. Collaborate with design and engineering teams.",
+      title: "Chargé d'Études Cliniques",
+      department: "Recherche",
+      location: "Agadir, Maroc",
+      type: "Temps plein",
+      description: "Gérer et superviser les études cliniques en collaboration avec les médecins et chercheurs.",
     },
     {
-      title: "Brand Strategist",
-      department: "Marketing",
-      location: "Remote",
-      type: "Full-time",
-      description: "Develop brand strategies for clients. Lead brand positioning and messaging initiatives.",
+      title: "Secrétaire Médicale",
+      department: "Administration",
+      location: "Agadir, Maroc",
+      type: "Temps plein",
+      description: "Accueillir les patients et gérer l'administration du laboratoire.",
     },
     {
-      title: "DevOps Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description: "Manage cloud infrastructure and CI/CD pipelines. Ensure system reliability and performance.",
+      title: "Ingénieur Biomédical",
+      department: "Technique",
+      location: "Agadir, Maroc",
+      type: "Temps plein",
+      description: "Assurer la maintenance des équipements biomédicaux du laboratoire.",
     },
     {
-      title: "Content Writer",
-      department: "Marketing",
-      location: "Remote",
-      type: "Full-time / Contract",
-      description: "Create engaging content for blog, social media, and marketing campaigns.",
+      title: "Chargé de Communication Scientifique",
+      department: "Communication",
+      location: "Agadir, Maroc / Télétravail",
+      type: "Temps plein / CDD",
+      description: "Rédiger du contenu scientifique et gérer la communication du laboratoire.",
     },
     {
-      title: "Sales Executive",
-      department: "Sales",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      description: "Drive new business development and manage client relationships.",
+      title: "Commercial en Biologie Médicale",
+      department: "Commercial",
+      location: "Région Souss-Massa",
+      type: "Temps plein",
+      description: "Développer le portefeuille clients et promouvoir les services du laboratoire.",
     },
   ];
 
   const benefits = [
     {
-      icon: Laptop,
-      title: "Remote-First",
-      description: "Work from anywhere in the world with flexible hours.",
+      icon: Award,
+      title: "Expertise Scientifique",
+      description: "Travaillez avec des équipes hautement qualifiées et des équipements de pointe.",
     },
     {
       icon: Heart,
-      title: "Health & Wellness",
-      description: "Comprehensive health insurance and wellness programs.",
+      title: "Santé & Bien-être",
+      description: "Assurance maladie complète et programmes de bien-être au travail.",
     },
     {
       icon: TrendingUp,
-      title: "Career Growth",
-      description: "Professional development budget and clear career paths.",
+      title: "Évolution Professionnelle",
+      description: "Formations continues et perspectives d'évolution de carrière claires.",
     },
     {
       icon: Users,
-      title: "Team Culture",
-      description: "Collaborative environment with talented, passionate people.",
+      title: "Environnement Collaboratif",
+      description: "Travaillez avec des professionnels passionnés par la biologie médicale.",
     },
     {
-      icon: Palmtree,
-      title: "Time Off",
-      description: "Unlimited PTO and paid holidays to recharge.",
+      icon: Zap,
+      title: "Technologies de Pointe",
+      description: "Accès aux dernières technologies en matière d'analyses biologiques.",
     },
     {
       icon: Coffee,
-      title: "Perks & More",
-      description: "Home office stipend, team retreats, and social events.",
+      title: "Avantages Sociaux",
+      description: "Restauration, transport, et activités sociales pour tous les employés.",
     },
     {
       icon: Zap,
@@ -188,9 +188,9 @@ const Careers = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Join CREATV LAB?</h2>
-            <p className="text-xl text-muted-foreground">
-              More than just a job - it's a place to grow, create, and thrive
+            <h2 className="text-3xl font-bold mb-4">Pourquoi Nous Rejoindre ?</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              Rejoignez un laboratoire de référence au Maroc, reconnu pour son excellence technique et son engagement envers la qualité des soins.
             </p>
           </div>
           
@@ -212,12 +212,12 @@ const Careers = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Our Values</h2>
-            <p className="text-xl text-muted-foreground">
-              The principles that guide how we work together
+          <div className="text-center mb-12">
+            <h2 id="offres" className="text-3xl font-bold mb-4">Nos Offres d'Emploi</h2>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              Découvrez nos postes à pourvoir. Nous recherchons des profils passionnés pour renforcer notre équipe.
             </p>
           </div>
           
@@ -228,6 +228,15 @@ const Careers = () => {
                 <p className="text-muted-foreground">{value.description}</p>
               </Card>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-foreground/70 mb-4">
+              Vous ne trouvez pas de poste qui vous correspond ? Envoyez-nous votre candidature spontanée.
+            </p>
+            <Button asChild variant="outline">
+              <Link to="/contact">Candidature Spontanée</Link>
+            </Button>
           </div>
         </div>
       </section>

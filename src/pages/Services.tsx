@@ -181,13 +181,13 @@ const Services = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 gradient-hero">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               Nos <span className="text-gradient">Analyses</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               Des analyses médicales complètes et précises réalisées par des professionnels qualifiés. 
               Équipements de pointe et résultats rapides pour votre santé.
             </p>
@@ -196,8 +196,16 @@ const Services = () => {
       </section>
 
       {/* Main Services */}
-      <section className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+              Nos Services d'Analyses
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Découvrez notre gamme complète d'analyses médicales réalisées avec précision et fiabilité.
+            </p>
+          </div>
           <div className="space-y-16 md:space-y-24">
             {services.map((service, index) => {
               const Icon = service.icon;
@@ -262,18 +270,15 @@ const Services = () => {
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {additionalServices.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className="p-6 hover-lift shadow-card border-border/50 text-center">
-                  <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4">
-                    <Icon className="text-white" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm">{service.description}</p>
-                </Card>
-              );
-            })}
+            {additionalServices.map((service, index) => (
+              <Card key={index} className="p-6 hover-lift shadow-card border-border/50 text-center">
+                <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4">
+                  <service.icon className="text-white" size={28} />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-muted-foreground text-sm">{service.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

@@ -31,62 +31,99 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="container mx-auto px-4 py-4">
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border shadow-sm">
+      <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Centre de biologie Agadir" className="h-20 w-auto" />
+            <img 
+              src={logo} 
+              alt="Centre de biologie Agadir" 
+              className="h-16 w-auto sm:h-20" 
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors text-sm"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <ThemeToggle />
-            <Button className="gradient-primary text-white" asChild>
-              <Link to="/appointments">Prendre RDV</Link>
-            </Button>
+          <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+            <div className="flex flex-wrap justify-center gap-1 xl:gap-2">
+              {navLinks.slice(0, 6).map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="px-2 py-1.5 text-foreground/80 hover:text-primary transition-colors text-sm whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 border-l border-border pl-2 ml-2">
+              {navLinks.slice(6).map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="px-2 py-1.5 text-foreground/80 hover:text-primary transition-colors text-sm whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <ThemeToggle />
+              <Button size="sm" className="gradient-primary text-white whitespace-nowrap" asChild>
+                <Link to="/appointments">Prendre RDV</Link>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-3">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="hidden sm:flex gradient-primary text-white whitespace-nowrap" 
+              asChild
+            >
+              <Link to="/appointments">Prendre RDV</Link>
+            </Button>
             <ThemeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <button
-                  className="text-foreground"
-                  aria-label="Toggle menu"
-                >
-                  <Menu size={24} />
-                </button>
+                <Button variant="ghost" size="icon" className="md:h-10 md:w-10">
+                  <Menu size={20} className="text-foreground" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-full sm:w-80">
-                <SheetHeader>
-                  <SheetTitle className="text-left">
-                    <img src={logo} alt="Centre de biologie Agadir" className="h-16 w-auto" />
+              <SheetContent side="left" className="w-full max-w-xs sm:max-w-sm overflow-y-auto">
+                <SheetHeader className="text-left">
+                  <SheetTitle>
+                    <img 
+                      src={logo} 
+                      alt="Centre de biologie Agadir" 
+                      className="h-14 w-auto" 
+                    />
                   </SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col gap-6 mt-8">
+                <nav className="flex flex-col gap-1 mt-8">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium"
+                      className="px-4 py-3 rounded-lg text-foreground/90 hover:bg-accent/50 hover:text-primary transition-colors text-base font-medium flex items-center"
                     >
                       {link.label}
                     </Link>
                   ))}
-                  <Button className="gradient-primary text-white w-full mt-4" asChild>
-                    <Link to="/appointments">Prendre RDV</Link>
+                  <Button 
+                    className="gradient-primary text-white w-full mt-4 py-6 text-base" 
+                    asChild
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Link to="/appointments">Prendre Rendez-vous</Link>
                   </Button>
+                </nav>
+                <div className="mt-8 pt-6 border-t border-border">
+                  <p className="text-sm text-muted-foreground mb-4 px-4">
+                    Centre de Biologie Agadir - Votre santé, notre priorité
+                  </p>
                 </div>
               </SheetContent>
             </Sheet>
@@ -94,5 +131,7 @@ export const Navigation = () => {
         </div>
       </div>
     </nav>
+    <div className="h-16 sm:h-20 lg:h-24"></div>
+    </>
   );
 };

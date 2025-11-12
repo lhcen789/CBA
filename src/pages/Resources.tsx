@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { FileText, Video, Book, Download, Search, Heart, Activity, Stethoscope } from "lucide-react";
+import { useState } from "react";
+import { FileText, Video, Book, Download, Search, Heart, Activity, Stethoscope, Calendar, Clock, MessageSquare, BookOpen, CheckCircle, ChevronDown, Send } from "lucide-react";
 
-const Resources = () => {
+const Resources: React.FC = () => {
   const guides = [
     {
       icon: FileText,
@@ -137,7 +138,78 @@ const Resources = () => {
     },
   ];
 
-  const categories = ["Tous", "Hématologie", "Biochimie", "Prévention", "Conseils", "Éducation"];
+  const categories = ["Tous", "Hématologie", "Biochimie", "Prévention", "Conseils", "Éducation", "Témoignages", "Recherche"];
+
+  // State for FAQ accordion
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: "Comment me préparer pour une prise de sang ?",
+      answer: "Il est généralement recommandé d'être à jeun depuis 8 à 12 heures avant une prise de sang. Évitez également l'alcool et le tabac dans les heures précédant le prélèvement. N'oubliez pas d'apporter votre ordonnance et votre carte vitale."
+    },
+    {
+      question: "Combien de temps pour obtenir mes résultats ?",
+      answer: "Les délais d'obtention des résultats varient selon les analyses. Les résultats d'hématologie sont généralement disponibles sous 24 à 48h. Pour des analyses plus spécifiques, cela peut prendre jusqu'à une semaine. Vous serez informé par SMS ou par email lorsque vos résultats seront disponibles sur votre espace personnel."
+    },
+    {
+      question: "Puis-je avoir accès à mes anciens résultats ?",
+      answer: "Oui, tous vos résultats sont archivés dans votre espace personnel sécurisé. Vous pouvez y accéder à tout moment et les télécharger au format PDF. Nous conservons vos résultats pendant 10 ans conformément à la réglementation en vigueur."
+    },
+    {
+      question: "Comment interpréter mes résultats d'analyse ?",
+      answer: "Vos résultats sont accompagnés de valeurs de référence. Cependant, seul votre médecin est habilité à les interpréter dans le cadre de votre situation médicale. Nous vous recommandons de prendre rendez-vous avec votre médecin pour une explication détaillée de vos résultats."
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sophie M.",
+      role: "Patient",
+      content: "Très satisfaite de la qualité des services. Les résultats sont rapides et l'équipe est très professionnelle. La plateforme en ligne est très pratique pour suivre mes résultats.",
+      rating: 5
+    },
+    {
+      name: "Thomas D.",
+      role: "Patient régulier",
+      content: "Je fais confiance à ce laboratoire depuis des années pour mes bilans de santé. Les prélèvements sont effectués avec professionnalisme et les résultats sont toujours précis et détaillés.",
+      rating: 5
+    },
+    {
+      name: "Amélie R.",
+      role: "Nouvelle patiente",
+      content: "Première expérience très positive. Accueil chaleureux et prise en charge rapide. J'ai particulièrement apprécié la possibilité de prendre rendez-vous en ligne.",
+      rating: 4
+    }
+  ];
+
+  const researchArticles = [
+    {
+      title: "Nouveaux biomarqueurs dans le dépistage précoce du cancer",
+      author: "Dr. Martin Dubois",
+      date: "15 Mars 2025",
+      summary: "Étude sur les avancées récentes dans le dépistage précoce des cancers par analyse sanguine.",
+      category: "Recherche"
+    },
+    {
+      title: "Impact de l'alimentation sur les marqueurs inflammatoires",
+      author: "Pr. Sophie Laurent",
+      date: "2 Mars 2025",
+      summary: "Analyse approfondie des relations entre habitudes alimentaires et marqueurs biologiques de l'inflammation.",
+      category: "Nutrition"
+    },
+    {
+      title: "Avancées dans le diagnostic des maladies auto-immunes",
+      author: "Dr. Jean-Luc Bernard",
+      date: "20 Février 2025",
+      summary: "Nouveaux tests et approches diagnostiques pour les maladies auto-immunes rares.",
+      category: "Immunologie"
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -296,25 +368,25 @@ const Resources = () => {
       </section>
 
       {/* Health Tips */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Conseils Pratiques</h2>
+            <h2 className="text-4xl font-bold mb-4">Conseils Santé</h2>
             <p className="text-xl text-muted-foreground">
-              Recommandations pour vos analyses
+              Astuces et recommandations pour vos analyses
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {healthTips.map((section, index) => (
-              <Card key={index} className="p-8 shadow-card border-border/50">
-                <div className="text-5xl mb-6 text-center">{section.icon}</div>
-                <h3 className="text-2xl font-bold mb-6 text-center">{section.title}</h3>
-                <ul className="space-y-3">
-                  {section.tips.map((tip, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                      <span className="text-foreground/80">{tip}</span>
+          <div className="grid md:grid-cols-3 gap-8">
+            {healthTips.map((tip, index) => (
+              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">{tip.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{tip.title}</h3>
+                <ul className="space-y-2">
+                  {tip.tips.map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -324,13 +396,13 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Whitepapers */}
-      <section className="py-20 bg-background">
+      {/* Testimonials */}
+      <section className="py-20 bg-secondary/10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Publications & Rapports</h2>
+            <h2 className="text-4xl font-bold mb-4">Témoignages</h2>
             <p className="text-xl text-muted-foreground">
-              Recherches et tendances en santé
+              Ce que nos patients disent de nous
             </p>
           </div>
           

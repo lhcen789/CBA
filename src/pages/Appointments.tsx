@@ -13,11 +13,27 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
-import { useState } from "react";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { useState, useRef, ChangeEvent } from "react";
+import { Clock, MapPin, Phone, Upload, FileText, X } from "lucide-react";
 
 export default function Appointments() {
   const [date, setDate] = useState<Date | undefined>(new Date());
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [analysisType, setAnalysisType] = useState<string>("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -67,7 +83,7 @@ export default function Appointments() {
 
                   <div className="space-y-2">
                     <Label htmlFor="analysisType">Type d'analyse *</Label>
-                    <Select>
+                    <Select onValueChange={setAnalysisType}>
                       <SelectTrigger id="analysisType">
                         <SelectValue placeholder="Sélectionnez le type d'analyse" />
                       </SelectTrigger>
@@ -80,6 +96,58 @@ export default function Appointments() {
                       </SelectContent>
                     </Select>
                   </div>
+
+                  {analysisType === 'ordonnance' && (
+                    <div className="space-y-2">
+                      <Label>Ajouter votre ordonnance (PDF, JPG, PNG, max 5MB)</Label>
+                      <div 
+                        className="flex flex-col items-center justify-center w-full p-6 border-2 border-dashed rounded-lg cursor-pointer hover:bg-accent/20 transition-colors"
+                        onClick={() => fileInputRef.current?.click()}
+                      >
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          className="hidden"
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          onChange={handleFileChange}
+                        />
+                        {!selectedFile ? (
+                          <>
+                            <Upload className="h-10 w-10 text-muted-foreground mb-2" />
+                            <p className="text-sm text-muted-foreground text-center">
+                              Cliquez pour télécharger ou glissez-déposez votre ordonnance
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              Formats acceptés: PDF, JPG, PNG (max 5MB)
+                            </p>
+                          </>
+                        ) : (
+                          <div className="w-full">
+                            <div className="flex items-center justify-between bg-accent/20 p-3 rounded-md">
+                              <div className="flex items-center space-x-2">
+                                <FileText className="h-5 w-5 text-primary" />
+                                <span className="text-sm font-medium truncate max-w-[200px]">
+                                  {selectedFile.name}
+                                </span>
+                              </div>
+                              <Button
+                                type="button"
+                                variant="ghost"
+                                size="icon"
+                                className="h-6 w-6"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleRemoveFile();
+                                }}
+                              >
+                                <X className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">

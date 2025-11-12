@@ -12,13 +12,13 @@ const AboutPage = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero">
-        <div className="container mx-auto px-4">
+      <section className="pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 gradient-hero">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               À Propos du <span className="text-gradient">Centre de biologie Agadir</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
               Un laboratoire d'analyses médicales de référence au cœur d'Agadir, alliant expertise, technologie de pointe et service humain
             </p>
           </div>
@@ -26,60 +26,69 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-12 md:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div>
-              <Badge className="mb-4 bg-primary text-primary-foreground">Notre Mission</Badge>
-              <h2 className="text-4xl font-bold mb-6 text-foreground">Votre Santé, Notre Engagement</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Le Centre de biologie Agadir est votre partenaire de confiance pour tous vos besoins en analyses médicales. 
-                Fondé sur des valeurs d'excellence et d'humanité, nous mettons notre expertise au service de votre santé 
-                depuis plus de 15 ans.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Notre laboratoire dispose des équipements les plus modernes et nos biologistes qualifiés suivent 
-                régulièrement des formations pour rester à la pointe des avancées scientifiques. Nous garantissons 
-                la fiabilité et la rapidité de nos analyses, tout en offrant un service personnalisé et humain.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Que ce soit pour un bilan de routine, un suivi médical ou des analyses spécialisées, nous sommes 
-                là pour vous accompagner avec professionnalisme et bienveillance.
-              </p>
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <Badge className="text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20">
+                Notre Mission
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                Votre Santé, Notre Engagement
+              </h2>
+              <div className="space-y-3 sm:space-y-4 text-muted-foreground">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Le Centre de biologie Agadir est votre partenaire de confiance pour tous vos besoins en analyses médicales. 
+                  Fondé sur des valeurs d'excellence et d'humanité, nous mettons notre expertise au service de votre santé 
+                  depuis plus de 15 ans.
+                </p>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Notre laboratoire dispose des équipements les plus modernes et nos biologistes qualifiés suivent 
+                  régulièrement des formations pour rester à la pointe des avancées scientifiques.
+                </p>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Que ce soit pour un bilan de routine, un suivi médical ou des analyses spécialisées, nous sommes 
+                  là pour vous accompagner avec professionnalisme et bienveillance.
+                </p>
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="p-6 text-center shadow-card border-border">
-                <div className="text-4xl font-bold text-gradient mb-2">15+</div>
-                <p className="text-muted-foreground">Années d'Expérience</p>
-              </Card>
-              <Card className="p-6 text-center shadow-card border-border">
-                <div className="text-4xl font-bold text-gradient mb-2">50K+</div>
-                <p className="text-muted-foreground">Analyses Réalisées</p>
-              </Card>
-              <Card className="p-6 text-center shadow-card border-border">
-                <div className="text-4xl font-bold text-gradient mb-2">25+</div>
-                <p className="text-muted-foreground">Professionnels</p>
-              </Card>
-              <Card className="p-6 text-center shadow-card border-border">
-                <div className="text-4xl font-bold text-gradient mb-2">98%</div>
-                <p className="text-muted-foreground">Satisfaction Client</p>
-              </Card>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+              {[
+                { value: "15+", label: "Années d'Expérience" },
+                { value: "50K+", label: "Analyses Réalisées" },
+                { value: "25+", label: "Professionnels" },
+                { value: "98%", label: "Satisfaction Client" }
+              ].map((stat, index) => (
+                <Card 
+                  key={index}
+                  className="p-4 sm:p-5 md:p-6 text-center hover-lift border-border/50 hover:border-primary/20 transition-all duration-300"
+                >
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">
+                    {stat.value}
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-12 md:py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Nos Valeurs</h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
+              Nos Valeurs
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Les principes qui guident notre travail au quotidien
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 title: "Excellence",
@@ -102,12 +111,19 @@ const AboutPage = () => {
                 icon: Users
               }
             ].map((value, index) => (
-              <Card key={index} className="p-8 text-center hover-lift shadow-card border-border">
-                <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-8 h-8 text-white" />
+              <Card 
+                key={index} 
+                className="p-5 sm:p-6 text-center hover-lift border-border/50 hover:border-primary/20 transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+                  <value.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-foreground">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">
+                  {value.title}
+                </h3>
+                <p className="text-sm sm:text-base text-muted-foreground">
+                  {value.description}
+                </p>
               </Card>
             ))}
           </div>
@@ -115,104 +131,143 @@ const AboutPage = () => {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-primary text-primary-foreground">Notre Vision</Badge>
-              <h2 className="text-4xl font-bold mb-6 text-foreground">L'Excellence au Service de Votre Santé</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+            <div className="text-center mb-10 sm:mb-12">
+              <Badge className="text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20 mb-3 sm:mb-4">
+                Notre Vision
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-foreground">
+                L'Excellence au Service de Votre Santé
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 Être le laboratoire de référence au Maroc, reconnu pour la qualité irréprochable de nos analyses, 
                 notre innovation technologique et notre engagement envers le bien-être de nos patients.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <Card className="p-6 text-center shadow-card border-border hover-lift">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🔬</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-foreground">Innovation Continue</h3>
-                <p className="text-muted-foreground">
-                  Adoption des technologies d'analyse les plus avancées pour des résultats toujours plus précis
-                </p>
-              </Card>
-              
-              <Card className="p-6 text-center shadow-card border-border hover-lift">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">📚</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-foreground">Formation Continue</h3>
-                <p className="text-muted-foreground">
-                  Équipe constamment formée aux dernières avancées de la médecine de laboratoire
-                </p>
-              </Card>
-              
-              <Card className="p-6 text-center shadow-card border-border hover-lift">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🤝</span>
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-foreground">Réseau Médical</h3>
-                <p className="text-muted-foreground">
-                  Partenariats avec les meilleurs établissements de santé de la région
-                </p>
-              </Card>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-10 sm:mt-12">
+              {[
+                {
+                  icon: "🔬",
+                  title: "Innovation Continue",
+                  description: "Adoption des technologies d'analyse les plus avancées pour des résultats toujours plus précis"
+                },
+                {
+                  icon: "📚",
+                  title: "Formation Continue",
+                  description: "Équipe constamment formée aux dernières avancées de la médecine de laboratoire"
+                },
+                {
+                  icon: "🤝",
+                  title: "Réseau Médical",
+                  description: "Partenariats avec les meilleurs établissements de santé de la région"
+                }
+              ].map((item, index) => (
+                <Card 
+                  key={index}
+                  className="p-5 sm:p-6 text-center hover-lift border-border/50 hover:border-primary/20 transition-all duration-300 h-full flex flex-col"
+                >
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors">
+                    <span className="text-2xl sm:text-3xl">{item.icon}</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground flex-1">
+                    {item.description}
+                  </p>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Certifications */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">Certifications & Accréditations</h2>
-            <p className="text-xl text-muted-foreground">
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-foreground">
+              Certifications & Accréditations
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Conformité aux normes internationales de qualité
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
             {[
               "ISO 15189",
               "ISO 9001",
               "Agrément Ministère de la Santé",
               "Certifié COFRAC"
             ].map((cert, index) => (
-              <Card key={index} className="p-6 text-center hover-lift shadow-card border-border">
-                <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-2xl">✓</span>
+              <Card 
+                key={index} 
+                className="p-5 sm:p-6 text-center hover-lift border-border/50 hover:border-primary/20 transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-105 transition-transform">
+                  <span className="text-white font-bold text-xl sm:text-2xl">✓</span>
                 </div>
-                <p className="font-semibold text-foreground">{cert}</p>
+                <p className="font-medium sm:font-semibold text-foreground text-sm sm:text-base">
+                  {cert}
+                </p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Engagement */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <Card className="p-12 lg:p-16 text-center gradient-primary shadow-glow">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Votre Santé Mérite l'Excellence
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Faites confiance à notre expertise et à notre engagement pour prendre soin de votre santé
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link to="/appointments">
-                <Button size="lg" variant="secondary" className="text-lg px-8">
-                  Prendre Rendez-vous
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
-                  Nos Services
-                </Button>
-              </Link>
+      {/* Mission Section */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <Badge className="text-xs sm:text-sm bg-primary/10 text-primary hover:bg-primary/20">
+                Notre Mission
+              </Badge>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                Votre Santé, Notre Engagement
+              </h2>
+              <div className="space-y-3 sm:space-y-4 text-muted-foreground">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Le Centre de biologie Agadir est votre partenaire de confiance pour tous vos besoins en analyses médicales. 
+                  Fondé sur des valeurs d'excellence et d'humanité, nous mettons notre expertise au service de votre santé 
+                  depuis plus de 15 ans.
+                </p>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Notre laboratoire dispose des équipements les plus modernes et nos biologistes qualifiés suivent 
+                  régulièrement des formations pour rester à la pointe des avancées scientifiques.
+                </p>
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                  Que ce soit pour un bilan de routine, un suivi médical ou des analyses spécialisées, nous sommes 
+                  là pour vous accompagner avec professionnalisme et bienveillance.
+                </p>
+              </div>
             </div>
-          </Card>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+              {[
+                { value: "15+", label: "Années d'Expérience" },
+                { value: "50K+", label: "Analyses Réalisées" },
+                { value: "25+", label: "Professionnels" },
+                { value: "98%", label: "Satisfaction Client" }
+              ].map((stat, index) => (
+                <Card 
+                  key={index}
+                  className="p-4 sm:p-5 md:p-6 text-center hover-lift border-border/50 hover:border-primary/20 transition-all duration-300"
+                >
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">
+                    {stat.value}
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    {stat.label}
+                  </p>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
