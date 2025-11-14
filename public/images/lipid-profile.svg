@@ -1,0 +1,54 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#FEF7FF"/>
+  
+  <!-- Heart -->
+  <path d="M200 120 Q190 105 175 110 Q160 115 165 135 Q170 155 200 175 Q230 155 235 135 Q240 115 225 110 Q210 105 200 120 Z" fill="#EF4444"/>
+  
+  <!-- Blood vessels -->
+  <path d="M200 175 Q220 185 240 195 Q260 205 280 215" stroke="#DC2626" stroke-width="4" fill="none"/>
+  <path d="M200 175 Q180 185 160 195 Q140 205 120 215" stroke="#DC2626" stroke-width="4" fill="none"/>
+  
+  <!-- Cholesterol particles -->
+  <!-- LDL (bad) -->
+  <circle cx="250" cy="200" r="8" fill="#DC2626"/>
+  <text x="250" y="205" text-anchor="middle" fill="white" font-size="8" font-weight="bold">LDL</text>
+  
+  <circle cx="270" cy="210" r="8" fill="#DC2626"/>
+  <text x="270" y="215" text-anchor="middle" fill="white" font-size="8" font-weight="bold">LDL</text>
+  
+  <!-- HDL (good) -->
+  <circle cx="150" cy="200" r="8" fill="#10B981"/>
+  <text x="150" y="205" text-anchor="middle" fill="white" font-size="8" font-weight="bold">HDL</text>
+  
+  <circle cx="130" cy="210" r="8" fill="#10B981"/>
+  <text x="130" y="215" text-anchor="middle" fill="white" font-size="8" font-weight="bold">HDL</text>
+  
+  <!-- Arterial plaque -->
+  <ellipse cx="260" cy="195" rx="12" ry="6" fill="#F59E0B" opacity="0.7"/>
+  <ellipse cx="275" cy="205" rx="8" ry="4" fill="#F59E0B" opacity="0.7"/>
+  
+  <!-- Test tube with blood -->
+  <rect x="320" y="120" width="15" height="80" rx="7" fill="#DC2626"/>
+  <rect x="320" y="120" width="15" height="20" fill="#FCA5A5"/>
+  
+  <!-- Chart showing levels -->
+  <rect x="80" y="240" width="120" height="40" rx="4" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="85" y="245" width="30" height="8" fill="#10B981"/>
+  <text x="120" y="252" fill="#374151" font-size="10">HDL: Normal</text>
+  <rect x="85" y="255" width="45" height="8" fill="#F59E0B"/>
+  <text x="135" y="262" fill="#374151" font-size="10">LDL: Élevé</text>
+  <rect x="85" y="265" width="25" height="8" fill="#EF4444"/>
+  <text x="115" y="272" fill="#374151" font-size="10">TG: Élevé</text>
+  
+  <!-- Stethoscope -->
+  <path d="M300 100 Q320 90 330 110 Q325 130 305 125 L290 140 Q285 145 280 140 L275 135" stroke="#374151" stroke-width="3" fill="none"/>
+  <circle cx="330" cy="110" r="8" fill="#6B7280"/>
+  <circle cx="275" cy="135" r="6" fill="#9CA3AF"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Bilan Lipidique</text>
+</svg>

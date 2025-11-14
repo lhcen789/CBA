@@ -43,6 +43,23 @@ export default function Pricing() {
         { name: "Ferritine", price: "150 DH" },
         { name: "Transferrine", price: "120 DH" },
         { name: "Capacité totale de fixation du fer (CTFH)", price: "80 DH" },
+        { name: "Vitamine B12", price: "200 DH" },
+        { name: "Folates (Acide folique)", price: "180 DH" },
+        { name: "Vitamine D (25-OH)", price: "250 DH" },
+        { name: "Magnésium", price: "60 DH" },
+        { name: "Phosphore", price: "50 DH" },
+        { name: "Calcium", price: "50 DH" },
+        { name: "Sodium", price: "40 DH" },
+        { name: "Potassium", price: "40 DH" },
+        { name: "Chlore", price: "40 DH" },
+        { name: "Protéines totales", price: "50 DH" },
+        { name: "Albumine", price: "50 DH" },
+        { name: "Préalbumine", price: "120 DH" },
+        { name: "Lactate déshydrogénase (LDH)", price: "80 DH" },
+        { name: "Créatine phosphokinase (CPK)", price: "100 DH" },
+        { name: "Troponine I", price: "300 DH" },
+        { name: "BNP (Brain Natriuretic Peptide)", price: "400 DH" },
+        { name: "Homocystéine", price: "350 DH" },
       ]
     },
     {
@@ -62,6 +79,20 @@ export default function Pricing() {
         { name: "Testostérone libre", price: "250 DH" },
         { name: "PSA total", price: "200 DH" },
         { name: "PSA libre", price: "200 DH" },
+        { name: "Insuline", price: "200 DH" },
+        { name: "Peptide C", price: "250 DH" },
+        { name: "IGF-1 (Facteur de croissance)", price: "350 DH" },
+        { name: "Hormone de croissance (GH)", price: "300 DH" },
+        { name: "Parathormone (PTH)", price: "300 DH" },
+        { name: "Calcitonine", price: "350 DH" },
+        { name: "17-Beta Œstradiol", price: "180 DH" },
+        { name: "DHEA-S", price: "200 DH" },
+        { name: "Androstènedione", price: "250 DH" },
+        { name: "SHBG (Sex Hormone Binding Globulin)", price: "200 DH" },
+        { name: "AMH (Hormone Anti-Müllérienne)", price: "400 DH" },
+        { name: "Inhibine B", price: "450 DH" },
+        { name: "β-HCG (Grossesse)", price: "120 DH" },
+        { name: "β-HCG quantitative", price: "150 DH" },
       ]
     },
     {
@@ -75,6 +106,14 @@ export default function Pricing() {
         { name: "CYFRA 21-1 (Cancer du poumon)", price: "300 DH" },
         { name: "NSE (Neuron Specific Enolase)", price: "300 DH" },
         { name: "SCC (Cancer du col utérin)", price: "300 DH" },
+        { name: "Alpha-fœtoprotéine (AFP)", price: "200 DH" },
+        { name: "CA 27-29 (Cancer du sein)", price: "280 DH" },
+        { name: "CA 50 (Cancer digestif)", price: "280 DH" },
+        { name: "Chromogranine A", price: "400 DH" },
+        { name: "Enolase (NSE)", price: "300 DH" },
+        { name: "HE4 (Cancer de l'ovaire)", price: "350 DH" },
+        { name: "Thyroglobuline", price: "250 DH" },
+        { name: "Calcitonine (Cancer thyroïde)", price: "350 DH" },
       ]
     },
     {
@@ -91,6 +130,22 @@ export default function Pricing() {
         { name: "Rubéole IgG/IgM", price: "200 DH" },
         { name: "CMV IgG/IgM", price: "250 DH" },
         { name: "EBV VCA IgG/IgM", price: "300 DH" },
+        { name: "Herpès simplex 1 et 2 IgG/IgM", price: "250 DH" },
+        { name: "Varicelle-Zona IgG/IgM", price: "200 DH" },
+        { name: "Chlamydia trachomatis", price: "180 DH" },
+        { name: "Mycoplasma pneumoniae", price: "200 DH" },
+        { name: "Bordetella pertussis (Coqueluche)", price: "250 DH" },
+        { name: "Salmonella (Widal et Félix)", price: "100 DH" },
+        { name: "Brucella (Wright)", price: "80 DH" },
+        { name: "Rickettsia (Fièvre boutonneuse)", price: "150 DH" },
+        { name: "Leishmaniose", price: "200 DH" },
+        { name: "Paludisme (Goutte épaisse)", price: "80 DH" },
+        { name: "Test rapide Paludisme", price: "120 DH" },
+        { name: "Hépatite A IgG/IgM", price: "150 DH" },
+        { name: "Hépatite E IgG/IgM", price: "200 DH" },
+        { name: "COVID-19 PCR", price: "300 DH" },
+        { name: "COVID-19 Antigène", price: "150 DH" },
+        { name: "COVID-19 Sérologie IgG/IgM", price: "200 DH" },
       ]
     },
     {
@@ -116,53 +171,105 @@ export default function Pricing() {
         { name: "Bilan martial complet (Fer, Ferritine, Transferrine)", price: "350 DH" },
         { name: "Bilan rhumatologique complet", price: "600 DH" },
       ]
-    }
-  ];
-
-  const packages = [
+    },
     {
-      name: "Bilan de Base",
-      price: "299 DH",
-      description: "Analyses essentielles pour un suivi de santé général",
-      features: [
-        "Numération formule sanguine (NFS)",
-        "Glycémie à jeun",
-        "Cholestérol total",
-        "Créatininémie",
-        "Résultats en 24h",
-        "Consultation des résultats en ligne"
+      category: "Immunologie et Allergologie",
+      items: [
+        { name: "IgE totales", price: "150 DH" },
+        { name: "IgE spécifiques (par allergène)", price: "80 DH" },
+        { name: "Panel allergènes alimentaires (10 tests)", price: "600 DH" },
+        { name: "Panel allergènes respiratoires (10 tests)", price: "600 DH" },
+        { name: "IgA", price: "100 DH" },
+        { name: "IgG", price: "100 DH" },
+        { name: "IgM", price: "100 DH" },
+        { name: "Complément C3", price: "150 DH" },
+        { name: "Complément C4", price: "150 DH" },
+        { name: "Facteur rhumatoïde", price: "120 DH" },
+        { name: "Anticorps anti-CCP", price: "300 DH" },
+        { name: "Anticorps anti-nucléaires (AAN)", price: "200 DH" },
+        { name: "Anticorps anti-DNA natif", price: "250 DH" },
+        { name: "Anticorps anti-SSA/SSB", price: "300 DH" },
+        { name: "Anticorps anti-Scl70", price: "250 DH" },
+        { name: "Anticorps anti-centromère", price: "250 DH" },
+        { name: "ANCA (c-ANCA, p-ANCA)", price: "350 DH" },
       ]
     },
     {
-      name: "Bilan Complet",
-      price: "999 DH",
-      description: "Analyses approfondies pour une évaluation complète",
-      features: [
-        "NFS complète",
-        "Bilan lipidique complet",
-        "Bilan hépatique",
-        "Bilan rénal",
-        "HbA1c",
-        "Vitamine D",
-        "CRP",
-        "Résultats en 24h",
-        "Rapport détaillé avec commentaires"
-      ],
-      popular: true
+      category: "Microbiologie",
+      items: [
+        { name: "ECBU (Examen cytobactériologique des urines)", price: "80 DH" },
+        { name: "Coproculture", price: "120 DH" },
+        { name: "Hémoculture", price: "200 DH" },
+        { name: "Prélèvement vaginal", price: "100 DH" },
+        { name: "Prélèvement urétral", price: "100 DH" },
+        { name: "Prélèvement de gorge", price: "80 DH" },
+        { name: "Recherche de BK (Tuberculose)", price: "150 DH" },
+        { name: "Culture de BK", price: "300 DH" },
+        { name: "Antibiogramme", price: "100 DH" },
+        { name: "Recherche de parasites intestinaux", price: "60 DH" },
+        { name: "Scotch test (Oxyures)", price: "40 DH" },
+        { name: "Recherche de Candida", price: "80 DH" },
+        { name: "Streptocoque B (femme enceinte)", price: "120 DH" },
+      ]
     },
     {
-      name: "Bilan Premium",
-      price: "1,999 DH",
-      description: "Check-up complet avec suivi personnalisé",
-      features: [
-        "Toutes les analyses du Bilan Complet",
-        "Marqueurs tumoraux de base",
-        "Bilan thyroïdien complet",
-        "Bilan martial complet",
-        "Sérologies infectieuses",
-        "Consultation nutritionnelle incluse",
-        "Résultats en urgence (12h)",
-        "Suivi personnalisé pendant 3 mois"
+      category: "Parasitologie",
+      items: [
+        { name: "Examen parasitologique des selles", price: "60 DH" },
+        { name: "Recherche d'amibes", price: "80 DH" },
+        { name: "Recherche de Giardia", price: "100 DH" },
+        { name: "Recherche de Cryptosporidium", price: "150 DH" },
+        { name: "Recherche d'œufs et parasites", price: "60 DH" },
+        { name: "Kyste hydatique (Sérologie)", price: "150 DH" },
+        { name: "Bilharziose (Sérologie)", price: "180 DH" },
+        { name: "Filariose (Sérologie)", price: "200 DH" },
+      ]
+    },
+    {
+      category: "Génétique et Biologie Moléculaire",
+      items: [
+        { name: "Caryotype", price: "800 DH" },
+        { name: "Recherche de trisomie 21 (DPNI)", price: "1200 DH" },
+        { name: "Mutation BRCA1/BRCA2", price: "2500 DH" },
+        { name: "Facteur V Leiden", price: "400 DH" },
+        { name: "Mutation du gène de la prothrombine", price: "400 DH" },
+        { name: "HLA B27", price: "300 DH" },
+        { name: "Électrophorèse de l'hémoglobine", price: "150 DH" },
+        { name: "Recherche de mutations (par gène)", price: "800 DH" },
+        { name: "PCR Chlamydia/Gonocoque", price: "350 DH" },
+        { name: "PCR Mycoplasma/Ureaplasma", price: "300 DH" },
+      ]
+    },
+    {
+      category: "Analyses Spécialisées",
+      items: [
+        { name: "Électrophorèse des protéines", price: "120 DH" },
+        { name: "Immunofixation", price: "300 DH" },
+        { name: "Chaînes légères libres", price: "400 DH" },
+        { name: "β2-microglobuline", price: "200 DH" },
+        { name: "Haptoglobine", price: "120 DH" },
+        { name: "Céruloplasmine", price: "150 DH" },
+        { name: "Alpha-1-antitrypsine", price: "180 DH" },
+        { name: "Angiotensine Converting Enzyme (ACE)", price: "200 DH" },
+        { name: "Osmolalité sérique", price: "100 DH" },
+        { name: "Osmolalité urinaire", price: "100 DH" },
+        { name: "Clairance de la créatinine", price: "120 DH" },
+        { name: "Microalbuminurie", price: "80 DH" },
+        { name: "Protéinurie des 24h", price: "60 DH" },
+      ]
+    },
+    {
+      category: "Toxicologie",
+      items: [
+        { name: "Plombémie", price: "200 DH" },
+        { name: "Dosage de l'alcool", price: "100 DH" },
+        { name: "Recherche de drogues (urine)", price: "300 DH" },
+        { name: "Dosage médicamenteux (par molécule)", price: "250 DH" },
+        { name: "Paracétamol", price: "150 DH" },
+        { name: "Salicylés", price: "150 DH" },
+        { name: "Lithium", price: "120 DH" },
+        { name: "Digoxine", price: "200 DH" },
+        { name: "Théophylline", price: "180 DH" },
       ]
     }
   ];
@@ -182,41 +289,6 @@ export default function Pricing() {
           </div>
 
           <div className="space-y-12">
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Nos Forfaits</h2>
-              <div className="grid md:grid-cols-3 gap-8 mb-16">
-                {packages.map((pkg) => (
-                  <Card key={pkg.name} className={pkg.popular ? "border-primary shadow-lg scale-105" : ""}>
-                    {pkg.popular && (
-                      <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-semibold rounded-t-lg">
-                        Le plus populaire
-                      </div>
-                    )}
-                    <CardHeader>
-                      <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                      <CardDescription>{pkg.description}</CardDescription>
-                      <div className="mt-4">
-                        <span className="text-4xl font-bold text-gradient">{pkg.price}</span>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <ul className="space-y-3">
-                        {pkg.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2">
-                            <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-sm">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Button className="w-full gradient-primary text-white" asChild>
-                        <Link to="/appointments">Réserver ce bilan</Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
             <div>
               <h2 className="text-2xl font-bold mb-6">Tarifs des Analyses Détailés</h2>
               <div className="space-y-8">

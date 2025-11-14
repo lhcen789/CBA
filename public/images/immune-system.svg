@@ -1,0 +1,65 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#F0FDF4"/>
+  
+  <!-- White blood cells -->
+  <circle cx="150" cy="120" r="15" fill="#10B981"/>
+  <circle cx="150" cy="120" r="10" fill="#059669"/>
+  <text x="150" y="125" text-anchor="middle" fill="white" font-size="8" font-weight="bold">WBC</text>
+  
+  <!-- T-cells -->
+  <circle cx="200" cy="100" r="12" fill="#3B82F6"/>
+  <text x="200" y="105" text-anchor="middle" fill="white" font-size="8" font-weight="bold">T</text>
+  
+  <circle cx="250" cy="130" r="12" fill="#3B82F6"/>
+  <text x="250" y="135" text-anchor="middle" fill="white" font-size="8" font-weight="bold">T</text>
+  
+  <!-- B-cells -->
+  <circle cx="180" cy="160" r="12" fill="#8B5CF6"/>
+  <text x="180" y="165" text-anchor="middle" fill="white" font-size="8" font-weight="bold">B</text>
+  
+  <circle cx="220" cy="180" r="12" fill="#8B5CF6"/>
+  <text x="220" y="185" text-anchor="middle" fill="white" font-size="8" font-weight="bold">B</text>
+  
+  <!-- Antibodies -->
+  <path d="M280 140 Q285 135 290 140 Q295 145 290 150 Q285 155 280 150 Q275 145 280 140 Z" fill="#F59E0B"/>
+  <text x="285" y="148" text-anchor="middle" fill="white" font-size="6">Ab</text>
+  
+  <path d="M300 160 Q305 155 310 160 Q315 165 310 170 Q305 175 300 170 Q295 165 300 160 Z" fill="#F59E0B"/>
+  <text x="305" y="168" text-anchor="middle" fill="white" font-size="6">Ab</text>
+  
+  <!-- Pathogens -->
+  <circle cx="120" cy="180" r="8" fill="#EF4444"/>
+  <circle cx="120" cy="180" r="4" fill="#DC2626"/>
+  
+  <circle cx="100" cy="160" r="8" fill="#EF4444"/>
+  <circle cx="100" cy="160" r="4" fill="#DC2626"/>
+  
+  <!-- Immune response arrows -->
+  <path d="M135 130 L115 170" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M190 150 L130 175" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Lymph nodes -->
+  <ellipse cx="320" cy="120" rx="8" ry="12" fill="#6B7280"/>
+  <ellipse cx="320" cy="160" rx="8" ry="12" fill="#6B7280"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+    </marker>
+  </defs>
+  
+  <!-- Complement system -->
+  <circle cx="270" cy="200" r="5" fill="#F97316"/>
+  <text x="270" y="204" text-anchor="middle" fill="white" font-size="6">C3</text>
+  
+  <circle cx="290" cy="210" r="5" fill="#F97316"/>
+  <text x="290" y="214" text-anchor="middle" fill="white" font-size="6">C4</text>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Système Immunitaire</text>
+</svg>

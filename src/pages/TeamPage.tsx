@@ -10,22 +10,22 @@ export default function TeamPage() {
       name: "Dr. Yassin Zemrani",
       role: "Biologiste",
       speciality: "Hématologie",
-      bio: "20 ans d'expérience en analyses médicales. Diplômée de la Faculté de Médecine de Casablanca, spécialisée en hématologie.",
+      bio: "10 ans d'expérience en analyses médicales. Diplômée de la Faculté de Médecine de Marrakech, spécialisée en hématologie.",
       expertise: ["Hématologie", "Immunologie", "Management"],
       education: "Doctorat en Biologie Médicale, Université Hassan II",
       certifications: ["Certification ISO 15189", "Formation continue CNOPS"]
     },
     {
-      name: "Dr. Youssef Alami",
+      name: "Dr. Ahmed Zemrani",
       role: "Biologiste Senior",
       speciality: "Biochimie",
-      bio: "Expert en biochimie clinique avec 15 ans d'expérience. Formé en France et au Maroc dans les meilleures institutions.",
+      bio: "Expert en biochimie clinique avec 10 ans d'expérience. Formé en US et au Maroc dans les meilleures institutions.",
       expertise: ["Biochimie", "Toxicologie", "Diabétologie"],
       education: "PhD Biochimie, Université Paris-Sud",
       certifications: ["European Specialist in Clinical Chemistry", "Diabétologie"]
     },
     {
-      name: "Dr. Fatima Zahra Idrissi",
+      name: "Dr. Lahcen elmomou",
       role: "Biologiste",
       speciality: "Microbiologie",
       bio: "Spécialisée en microbiologie et parasitologie. Passionnée par la recherche et le diagnostic précis des infections.",
@@ -34,7 +34,7 @@ export default function TeamPage() {
       certifications: ["Biosécurité niveau 3", "Antibiogramme"]
     },
     {
-      name: "Karima Mansouri",
+      name: "Da. Mbark",
       role: "Technicienne en Chef",
       speciality: "Analyses Générales",
       bio: "15 ans d'expérience technique. Responsable de la qualité et de la formation du personnel technique.",
@@ -43,7 +43,7 @@ export default function TeamPage() {
       certifications: ["Technicienne certifiée", "Prélèvements pédiatriques"]
     },
     {
-      name: "Mohamed Chakir",
+      name: " HANNANNANANANAN",
       role: "Responsable Qualité",
       speciality: "Assurance Qualité",
       bio: "Expert en systèmes de management de la qualité dans les laboratoires médicaux. Garant de l'accréditation du laboratoire.",
@@ -52,7 +52,7 @@ export default function TeamPage() {
       certifications: ["Auditeur ISO 15189", "Lead Auditor"]
     },
     {
-      name: "Sarah Benjelloun",
+      name: "HAHAHAHAHAHAHAH",
       role: "Accueil & Coordination",
       speciality: "Relation Patient",
       bio: "Coordinatrice dévouée assurant un accueil chaleureux et une expérience patient optimale. Interface entre patients et équipe médicale.",

@@ -1,0 +1,41 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#F0FDF4"/>
+  
+  <!-- Thyroid gland illustration -->
+  <path d="M180 120 Q160 110 150 130 Q155 150 180 145 Q200 150 220 145 Q240 150 250 130 Q240 110 220 120 Q200 115 180 120 Z" fill="#10B981"/>
+  <path d="M180 145 Q190 160 200 145 Q210 160 220 145" stroke="#059669" stroke-width="3" fill="none"/>
+  
+  <!-- Hormones (T3, T4, TSH) -->
+  <circle cx="120" cy="180" r="12" fill="#3B82F6"/>
+  <text x="120" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="bold">TSH</text>
+  
+  <circle cx="200" cy="200" r="12" fill="#8B5CF6"/>
+  <text x="200" y="205" text-anchor="middle" fill="white" font-size="10" font-weight="bold">T4</text>
+  
+  <circle cx="280" cy="180" r="12" fill="#EF4444"/>
+  <text x="280" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="bold">T3</text>
+  
+  <!-- Arrows showing hormone flow -->
+  <path d="M132 175 L185 135" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M212 190 L215 155" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M268 175 L225 135" stroke="#6B7280" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6B7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Stethoscope -->
+  <path d="M300 100 Q320 90 330 110 Q325 130 305 125 L290 140 Q285 145 280 140 L275 135" stroke="#374151" stroke-width="3" fill="none"/>
+  <circle cx="330" cy="110" r="8" fill="#6B7280"/>
+  <circle cx="275" cy="135" r="6" fill="#9CA3AF"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Bilan Thyroïdien</text>
+</svg>

@@ -1,0 +1,66 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#FEFCE8"/>
+  
+  <!-- Stomach -->
+  <path d="M150 100 Q180 90 200 110 Q210 130 200 150 Q190 170 160 165 Q140 160 135 140 Q130 120 150 100 Z" fill="#F59E0B"/>
+  
+  <!-- Small intestine -->
+  <path d="M200 150 Q220 160 240 150 Q260 140 270 160 Q280 180 260 190 Q240 200 220 190 Q200 180 200 160 Z" fill="#10B981"/>
+  
+  <!-- Large intestine -->
+  <path d="M260 190 Q280 200 300 190 Q320 180 310 200 Q300 220 280 210 Q260 200 260 190 Z" fill="#3B82F6"/>
+  
+  <!-- Digestive enzymes -->
+  <circle cx="120" cy="130" r="6" fill="#8B5CF6"/>
+  <text x="120" y="135" text-anchor="middle" fill="white" font-size="6">Enz</text>
+  
+  <circle cx="140" cy="150" r="6" fill="#8B5CF6"/>
+  <text x="140" y="155" text-anchor="middle" fill="white" font-size="6">Enz</text>
+  
+  <!-- Microbiome -->
+  <circle cx="280" cy="170" r="4" fill="#059669"/>
+  <circle cx="290" cy="180" r="4" fill="#059669"/>
+  <circle cx="270" cy="185" r="4" fill="#059669"/>
+  <circle cx="285" cy="195" r="4" fill="#059669"/>
+  
+  <!-- Nutrients -->
+  <rect x="320" y="120" width="8" height="8" rx="2" fill="#F97316"/>
+  <text x="324" y="127" text-anchor="middle" fill="white" font-size="6">A</text>
+  
+  <rect x="320" y="135" width="8" height="8" rx="2" fill="#EF4444"/>
+  <text x="324" y="142" text-anchor="middle" fill="white" font-size="6">B</text>
+  
+  <rect x="320" y="150" width="8" height="8" rx="2" fill="#10B981"/>
+  <text x="324" y="157" text-anchor="middle" fill="white" font-size="6">C</text>
+  
+  <!-- Absorption arrows -->
+  <path d="M250 160 L310 140" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M270 180 L315 155" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- H. pylori bacteria -->
+  <ellipse cx="170" cy="130" rx="3" ry="6" fill="#DC2626"/>
+  <path d="M167 130 Q165 125 163 130" stroke="#DC2626" stroke-width="1" fill="none"/>
+  <path d="M173 130 Q175 125 177 130" stroke="#DC2626" stroke-width="1" fill="none"/>
+  
+  <!-- Gastric acid -->
+  <circle cx="180" cy="120" r="3" fill="#F59E0B"/>
+  <text x="180" y="123" text-anchor="middle" fill="white" font-size="5">H+</text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+    </marker>
+  </defs>
+  
+  <!-- Liver connection -->
+  <path d="M150 100 Q130 80 110 90" stroke="#92400E" stroke-width="3" fill="none"/>
+  <ellipse cx="100" cy="95" rx="15" ry="10" fill="#92400E"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Santé Digestive</text>
+</svg>

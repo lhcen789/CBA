@@ -165,21 +165,6 @@ const Careers = () => {
               exceptional digital experiences and grow their careers in a supportive, 
               innovative environment.
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-gradient">50+</div>
-                <div className="text-muted-foreground">Team Members</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gradient">12</div>
-                <div className="text-muted-foreground">Countries</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gradient">8</div>
-                <div className="text-muted-foreground">Open Positions</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

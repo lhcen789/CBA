@@ -33,6 +33,106 @@ const ContactPage = () => {
       question: "Proposez-vous des prélèvements à domicile?",
       answer: "Oui, nous offrons un service de prélèvement à domicile sur rendez-vous pour les personnes à mobilité réduite.",
     },
+    {
+      question: "Comment prendre rendez-vous?",
+      answer: "Vous pouvez prendre rendez-vous par téléphone, via notre site web, ou directement au laboratoire. Nous recommandons la prise de rendez-vous pour éviter l'attente.",
+    },
+    {
+      question: "Quels documents dois-je apporter?",
+      answer: "Apportez votre ordonnance médicale, votre carte d'identité, votre carte d'assurance maladie et votre carte de mutuelle si vous en avez une.",
+    },
+    {
+      question: "Puis-je faire des analyses sans ordonnance?",
+      answer: "Certaines analyses de dépistage peuvent être réalisées sans ordonnance, mais elles ne seront pas remboursées par l'assurance maladie. Consultez-nous pour plus d'informations.",
+    },
+    {
+      question: "Combien coûtent les analyses?",
+      answer: "Les tarifs varient selon le type d'analyse. Les examens prescrits sont remboursés par l'AMO et les mutuelles. Nous fournissons un devis gratuit sur demande.",
+    },
+    {
+      question: "Que faire si mes résultats sont anormaux?",
+      answer: "Consultez rapidement votre médecin traitant avec vos résultats. En cas d'urgence, nous vous orienterons vers les services appropriés.",
+    },
+    {
+      question: "Gardez-vous mes résultats en archive?",
+      answer: "Oui, nous conservons vos résultats pendant 5 ans minimum. Vous pouvez demander des copies à tout moment pour votre suivi médical.",
+    },
+    {
+      question: "Faites-vous des analyses pour les enfants?",
+      answer: "Oui, nous réalisons tous types d'analyses pédiatriques. Nos techniciens sont formés pour les prélèvements chez les enfants avec un maximum de douceur.",
+    },
+    {
+      question: "Proposez-vous des bilans de santé complets?",
+      answer: "Oui, nous proposons différents types de bilans : bilan de santé général, bilan cardiovasculaire, bilan hormonal, bilan préventif selon l'âge et les facteurs de risque.",
+    },
+    {
+      question: "Puis-je manger ou boire avant certaines analyses?",
+      answer: "Pour la plupart des analyses, seule l'eau est autorisée pendant le jeûne. Évitez l'alcool 48h avant et le tabac 2h avant le prélèvement.",
+    },
+    {
+      question: "Combien de temps dure un prélèvement?",
+      answer: "Un prélèvement sanguin standard dure 5-10 minutes. Prévoyez 15-30 minutes au total incluant l'accueil et les formalités administratives.",
+    },
+    {
+      question: "Proposez-vous des analyses spécialisées?",
+      answer: "Oui, nous réalisons des analyses spécialisées en endocrinologie, cardiologie, oncologie, immunologie et bien d'autres domaines. Consultez-nous pour vos besoins spécifiques.",
+    },
+    {
+      question: "Comment interpréter mes résultats d'analyses?",
+      answer: "Vos résultats incluent les valeurs de référence. Cependant, seul votre médecin peut les interpréter dans votre contexte clinique. N'hésitez pas à lui poser des questions.",
+    },
+    {
+      question: "Effectuez-vous des analyses génétiques?",
+      answer: "Nous proposons certains tests génétiques sur prescription médicale. Ces analyses nécessitent un consentement éclairé et un conseil génétique approprié.",
+    },
+    {
+      question: "Quels sont vos tarifs pour les analyses courantes?",
+      answer: "Nos tarifs respectent la nomenclature officielle. Les analyses prescrites sont remboursées selon les taux en vigueur. Contactez-nous pour un devis personnalisé.",
+    },
+    {
+      question: "Puis-je avoir mes résultats par téléphone?",
+      answer: "Pour des raisons de confidentialité, nous ne communiquons pas les résultats par téléphone. Ils sont disponibles en ligne ou à retirer au laboratoire avec une pièce d'identité.",
+    },
+    {
+      question: "Que faire en cas d'urgence médicale?",
+      answer: "En cas d'urgence médicale, contactez immédiatement le SAMU (15) ou rendez-vous aux urgences. Notre laboratoire n'assure pas les urgences médicales.",
+    },
+    {
+      question: "Comment garantissez-vous la qualité de vos analyses?",
+      answer: "Notre laboratoire est accrédité et participe à des contrôles qualité externes réguliers. Nos équipements sont maintenus selon les normes les plus strictes.",
+    },
+    {
+      question: "Acceptez-vous les patients sans rendez-vous?",
+      answer: "Oui, mais nous recommandons fortement la prise de rendez-vous pour éviter l'attente, surtout pour les analyses nécessitant un jeûne.",
+    },
+    {
+      question: "Quelles précautions prenez-vous pour l'hygiène?",
+      answer: "Nous appliquons des protocoles d'hygiène stricts : désinfection systématique, matériel à usage unique, port d'équipements de protection individuelle.",
+    },
+    {
+      question: "Puis-je faire plusieurs analyses en même temps?",
+      answer: "Oui, la plupart des analyses peuvent être réalisées sur le même prélèvement. Cela évite les ponctions multiples et optimise votre temps.",
+    },
+    {
+      question: "Réalisez-vous des analyses pour les entreprises?",
+      answer: "Oui, nous proposons des bilans de santé au travail, des dépistages collectifs et des analyses dans le cadre de la médecine du travail.",
+    },
+    {
+      question: "Comment puis-je récupérer d'anciens résultats?",
+      answer: "Nous conservons vos résultats pendant 5 ans minimum. Vous pouvez les récupérer sur présentation d'une pièce d'identité ou via votre espace patient en ligne.",
+    },
+    {
+      question: "Proposez-vous des consultations de conseil?",
+      answer: "Nos biologistes peuvent vous expliquer vos résultats sur rendez-vous. Pour un suivi médical complet, consultez votre médecin traitant.",
+    },
+    {
+      question: "Que faire si j'ai peur des piqûres?",
+      answer: "Prévenez notre équipe de votre appréhension. Nos techniciens sont habitués et sauront vous rassurer. Nous utilisons des aiguilles très fines pour minimiser l'inconfort.",
+    },
+    {
+      question: "Puis-je venir avec un accompagnant?",
+      answer: "Oui, un accompagnant peut vous accompagner, surtout pour les enfants, personnes âgées ou en cas d'anxiété. L'espace d'attente peut accueillir les accompagnants.",
+    },
   ];
 
   return (
@@ -54,62 +154,22 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
+      {/* Contact Info - Single Card */}
       <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 md:mb-20">
-            {[
-              {
-                icon: Phone,
-                title: "Téléphone",
-                description: "Appelez-nous pendant nos horaires d'ouverture",
-                content: "+212 528-XX-XX-XX",
-                href: "tel:+212528XXXXXX"
-              },
-              {
-                icon: Mail,
-                title: "Email",
-                description: "Envoyez-nous un message",
-                content: "contact@centrebiologie-agadir.ma",
-                href: "mailto:contact@centrebiologie-agadir.ma"
-              },
-              {
-                icon: MapPin,
-                title: "Adresse",
-                description: "Visitez notre laboratoire",
-                content: "Avenue Hassan II, Agadir"
-              }
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Card 
-                  key={index} 
-                  className="p-6 sm:p-8 hover-lift border-border/50 hover:border-primary/20 transition-all duration-300 text-center group"
-                >
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-105 transition-transform">
-                    <Icon className="text-white w-6 h-6 sm:w-7 sm:h-7" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
-                    {item.description}
-                  </p>
-                  {item.href ? (
-                    <a 
-                      href={item.href} 
-                      className="text-sm sm:text-base text-primary hover:underline font-medium inline-block"
-                    >
-                      {item.content}
-                    </a>
-                  ) : (
-                    <p className="text-sm sm:text-base font-medium text-foreground">
-                      {item.content}
-                    </p>
-                  )}
-                </Card>
-              );
-            })}
+          <div className="mb-12 sm:mb-16 md:mb-20">
+            <Card className="p-6 sm:p-8 border-border/50 hover:border-primary/20 transition-all duration-300 text-center">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Phone className="text-white w-6 h-6 sm:w-7 sm:h-7" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">Contact</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground mb-4">Nous répondons rapidement pendant nos horaires d'ouverture</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+                <a href="tel:+212528XXXXXX" className="text-sm sm:text-base text-primary hover:underline font-medium">+212 528-XX-XX-XX</a>
+                <span className="hidden sm:inline text-muted-foreground">•</span>
+                <a href="mailto:contact@centrebiologie-agadir.ma" className="text-sm sm:text-base text-primary hover:underline font-medium break-all">contact@centrebiologie-agadir.ma</a>
+              </div>
+            </Card>
           </div>
 
           {/* Main Contact Form */}
@@ -213,77 +273,17 @@ const ContactPage = () => {
             </Card>
 
             <div className="space-y-6 sm:space-y-8">
-              <Card className="p-6 sm:p-8 shadow-card border-border/50">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <MapPin className="text-white w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-foreground">
-                        Notre Adresse
-                      </h3>
-                      <div className="space-y-0.5 sm:space-y-1 text-sm sm:text-base">
-                        <p className="text-muted-foreground">Avenue Hassan II</p>
-                        <p className="text-muted-foreground">Agadir 80000</p>
-                        <p className="text-muted-foreground">Maroc</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="h-px bg-border/50 w-full"></div>
-
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Phone className="text-white w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-foreground">
-                        Téléphone
-                      </h3>
-                      <div className="space-y-0.5 sm:space-y-1">
-                        <a 
-                          href="tel:+212528XXXXXX" 
-                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block"
-                        >
-                          +212 528-XX-XX-XX
-                        </a>
-                        <a 
-                          href="tel:+2126XXXXXXXX" 
-                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block"
-                        >
-                          +212 6XX-XX-XX-XX
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="h-px bg-border/50 w-full"></div>
-
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Mail className="text-white w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-base sm:text-lg mb-1.5 sm:mb-2 text-foreground">
-                        Email
-                      </h3>
-                      <div className="space-y-0.5 sm:space-y-1">
-                        <a 
-                          href="mailto:contact@centrebiologie-agadir.ma" 
-                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block break-all"
-                        >
-                          contact@centrebiologie-agadir.ma
-                        </a>
-                        <a 
-                          href="mailto:resultats@centrebiologie-agadir.ma" 
-                          className="text-sm sm:text-base text-muted-foreground hover:text-primary hover:underline block break-all"
-                        >
-                          resultats@centrebiologie-agadir.ma
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+              <Card className="p-0 overflow-hidden shadow-card border-border/50">
+                <div className="h-[320px] sm:h-[380px] md:h-[420px] w-full">
+                  <iframe
+                    title="Laboratoire CBA - Plan d'accès"
+                    src="https://www.google.com/maps?q=42%20Av.%20Kadi%20Ayad,%20Agadir%2080000&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </Card>
 

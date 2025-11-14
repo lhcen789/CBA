@@ -1,0 +1,44 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#FFFBEB"/>
+  
+  <!-- Liver -->
+  <path d="M120 120 Q180 100 240 120 Q280 130 290 160 Q285 190 250 200 Q200 210 150 200 Q100 190 110 160 Q115 140 120 120 Z" fill="#92400E"/>
+  
+  <!-- Liver segments -->
+  <path d="M150 130 Q190 125 220 140 Q240 150 235 170 Q220 180 190 175 Q160 170 150 150 Z" fill="#B45309"/>
+  
+  <!-- Gallbladder -->
+  <ellipse cx="260" cy="180" rx="12" ry="18" fill="#059669"/>
+  
+  <!-- Bile duct -->
+  <path d="M250 180 Q230 190 210 185" stroke="#10B981" stroke-width="3" fill="none"/>
+  
+  <!-- Hepatocytes -->
+  <circle cx="180" cy="150" r="4" fill="#F59E0B"/>
+  <circle cx="200" cy="160" r="4" fill="#F59E0B"/>
+  <circle cx="220" cy="155" r="4" fill="#F59E0B"/>
+  
+  <!-- Test tubes -->
+  <rect x="320" y="110" width="12" height="60" rx="6" fill="#DC2626"/>
+  <rect x="320" y="110" width="12" height="15" fill="#FCA5A5"/>
+  <text x="326" y="100" text-anchor="middle" fill="#374151" font-size="8">ALT</text>
+  
+  <rect x="340" y="115" width="12" height="55" rx="6" fill="#F59E0B"/>
+  <rect x="340" y="115" width="12" height="12" fill="#FCD34D"/>
+  <text x="346" y="105" text-anchor="middle" fill="#374151" font-size="8">AST</text>
+  
+  <!-- Bilirubin -->
+  <circle cx="100" cy="200" r="8" fill="#F59E0B"/>
+  <text x="100" y="205" text-anchor="middle" fill="white" font-size="7" font-weight="bold">Bili</text>
+  
+  <!-- Proteins -->
+  <rect x="80" y="180" width="15" height="8" rx="4" fill="#3B82F6"/>
+  <text x="87" y="186" text-anchor="middle" fill="white" font-size="6">Alb</text>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Fonction Hépatique</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#FEF7FF"/>
+  
+  <!-- Pregnant woman silhouette -->
+  <circle cx="200" cy="110" r="20" fill="#EC4899"/>
+  <ellipse cx="200" cy="160" rx="25" ry="35" fill="#EC4899"/>
+  <circle cx="200" cy="150" r="15" fill="#F9A8D4" opacity="0.7"/>
+  
+  <!-- Baby silhouette inside -->
+  <circle cx="200" cy="150" r="6" fill="#BE185D"/>
+  
+  <!-- Test tubes with different trimesters -->
+  <rect x="120" y="200" width="12" height="60" rx="6" fill="#3B82F6"/>
+  <rect x="120" y="200" width="12" height="20" fill="#93C5FD"/>
+  <text x="126" y="275" text-anchor="middle" fill="#1E293B" font-size="8">T1</text>
+  
+  <rect x="150" y="200" width="12" height="60" rx="6" fill="#10B981"/>
+  <rect x="150" y="200" width="12" height="25" fill="#86EFAC"/>
+  <text x="156" y="275" text-anchor="middle" fill="#1E293B" font-size="8">T2</text>
+  
+  <rect x="180" y="200" width="12" height="60" rx="6" fill="#F59E0B"/>
+  <rect x="180" y="200" width="12" height="30" fill="#FDE68A"/>
+  <text x="186" y="275" text-anchor="middle" fill="#1E293B" font-size="8">T3</text>
+  
+  <!-- Medical symbols -->
+  <circle cx="280" cy="120" r="8" fill="#DC2626"/>
+  <path d="M276 116 L284 124 M284 116 L276 124" stroke="white" stroke-width="2"/>
+  
+  <circle cx="310" cy="140" r="8" fill="#10B981"/>
+  <path d="M306 136 L314 144 M310 132 L310 148" stroke="white" stroke-width="2"/>
+  
+  <!-- Ultrasound waves -->
+  <path d="M250 110 Q260 100 270 110 Q280 120 290 110" stroke="#6B7280" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M250 120 Q260 110 270 120 Q280 130 290 120" stroke="#6B7280" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M250 130 Q260 120 270 130 Q280 140 290 130" stroke="#6B7280" stroke-width="2" fill="none" opacity="0.5"/>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Analyses de Grossesse</text>
+</svg>

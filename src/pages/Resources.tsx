@@ -17,6 +17,8 @@ const Resources: React.FC = () => {
       type: "Guide PDF",
       pages: "45 pages",
       category: "Hématologie",
+      downloadUrl: "/guides/guide-analyses-sanguines.pdf",
+      filename: "Guide_Analyses_Sanguines_CBA.pdf"
     },
     {
       icon: FileText,
@@ -25,6 +27,8 @@ const Resources: React.FC = () => {
       type: "Guide PDF",
       pages: "28 pages",
       category: "Prévention",
+      downloadUrl: "/guides/guide-bilan-sante.pdf",
+      filename: "Guide_Bilan_Sante_CBA.pdf"
     },
     {
       icon: FileText,
@@ -33,6 +37,68 @@ const Resources: React.FC = () => {
       type: "Guide PDF",
       pages: "52 pages",
       category: "Biochimie",
+      downloadUrl: "/guides/guide-analyses-biochimiques.pdf",
+      filename: "Guide_Analyses_Biochimiques_CBA.pdf"
+    },
+    {
+      icon: FileText,
+      title: "Dépistage Précoce du Diabète",
+      description: "Guide complet sur le dépistage et la prévention du diabète",
+      type: "Guide PDF",
+      pages: "38 pages",
+      category: "Prévention",
+      downloadUrl: "/guides/guide-diabete-depistage.pdf",
+      filename: "Guide_Diabete_Depistage_CBA.pdf"
+    },
+    {
+      icon: FileText,
+      title: "Santé Cardiovasculaire",
+      description: "Bilan lipidique et prévention des maladies cardiaques",
+      type: "Guide PDF",
+      pages: "42 pages",
+      category: "Cardiologie",
+      downloadUrl: "/guides/guide-sante-cardiovasculaire.pdf",
+      filename: "Guide_Sante_Cardiovasculaire_CBA.pdf"
+    },
+    {
+      icon: FileText,
+      title: "Analyses de Grossesse",
+      description: "Suivi médical complet pendant la grossesse",
+      type: "Guide PDF",
+      pages: "35 pages",
+      category: "Gynécologie",
+      downloadUrl: "/guides/guide-grossesse-analyses.pdf",
+      filename: "Guide_Grossesse_Analyses_CBA.pdf"
+    },
+    {
+      icon: FileText,
+      title: "Bilan Thyroïdien Complet",
+      description: "Comprendre le fonctionnement de votre thyroïde",
+      type: "Guide PDF",
+      pages: "29 pages",
+      category: "Endocrinologie",
+      downloadUrl: "/guides/guide-thyroide-bilan.pdf",
+      filename: "Guide_Thyroide_Bilan_CBA.pdf"
+    },
+    {
+      icon: FileText,
+      title: "Fonction Rénale et Urologie",
+      description: "Évaluation complète de la santé de vos reins",
+      type: "Guide PDF",
+      pages: "33 pages",
+      category: "Néphrologie",
+      downloadUrl: "/guides/guide-fonction-renale.pdf",
+      filename: "Guide_Fonction_Renale_CBA.pdf"
+    },
+    {
+      icon: FileText,
+      title: "Vitamines et Minéraux",
+      description: "Bilan nutritionnel et carences vitaminiques",
+      type: "Guide PDF",
+      pages: "31 pages",
+      category: "Nutrition",
+      downloadUrl: "/guides/guide-vitamines-mineraux.pdf",
+      filename: "Guide_Vitamines_Mineraux_CBA.pdf"
     },
   ];
 
@@ -42,24 +108,90 @@ const Resources: React.FC = () => {
       duration: "5 min",
       category: "Conseils",
       views: "8.5K",
+      description: "Guide pratique pour bien préparer votre prise de sang",
+      thumbnail: "/images/blood-analysis.svg",
+      videoId: "prep-prelevement",
     },
     {
       title: "Comprendre vos résultats d'analyses",
       duration: "12 min",
       category: "Éducation",
       views: "12.3K",
+      description: "Décryptage des principaux paramètres sanguins",
+      thumbnail: "/images/blood-analysis.svg",
+      videoId: "comprendre-resultats",
     },
     {
       title: "L'importance du bilan de santé annuel",
       duration: "8 min",
       category: "Prévention",
       views: "6.7K",
+      description: "Pourquoi faire un bilan de santé régulier",
+      thumbnail: "/images/heart-health.svg",
+      videoId: "bilan-annuel",
     },
     {
-      title: "Dépistage précoce des maladies",
+      title: "Dépistage précoce du diabète",
       duration: "10 min",
       category: "Prévention",
       views: "9.2K",
+      description: "Tests de dépistage et facteurs de risque",
+      thumbnail: "/images/diabetes-screening.svg",
+      videoId: "depistage-diabete",
+    },
+    {
+      title: "Bilan thyroïdien expliqué",
+      duration: "7 min",
+      category: "Endocrinologie",
+      views: "5.8K",
+      description: "TSH, T3, T4 : comprendre vos hormones thyroïdiennes",
+      thumbnail: "/images/thyroid-health.svg",
+      videoId: "bilan-thyroide",
+    },
+    {
+      title: "Santé cardiovasculaire et cholestérol",
+      duration: "9 min",
+      category: "Cardiologie",
+      views: "7.4K",
+      description: "Bilan lipidique et prévention des maladies cardiaques",
+      thumbnail: "/images/heart-health.svg",
+      videoId: "sante-cardio",
+    },
+    {
+      title: "Analyses de grossesse trimestre par trimestre",
+      duration: "15 min",
+      category: "Gynécologie",
+      views: "11.2K",
+      description: "Suivi médical complet pendant la grossesse",
+      thumbnail: "/images/pregnancy-tests.svg",
+      videoId: "analyses-grossesse",
+    },
+    {
+      title: "Fonction rénale : créatinine et DFG",
+      duration: "6 min",
+      category: "Néphrologie",
+      views: "4.3K",
+      description: "Évaluer la santé de vos reins",
+      thumbnail: "/images/kidney-function.svg",
+      videoId: "fonction-renale",
+    },
+    {
+      title: "Vitamines et carences nutritionnelles",
+      duration: "11 min",
+      category: "Nutrition",
+      views: "6.9K",
+      description: "Dépistage des carences en vitamines et minéraux",
+      thumbnail: "/images/vitamin-d.svg",
+      videoId: "vitamines-carences",
+    },
+    {
+      title: "Système immunitaire et défenses",
+      duration: "8 min",
+      category: "Immunologie",
+      views: "5.1K",
+      description: "Comprendre vos analyses immunologiques",
+      thumbnail: "/images/immune-system.svg",
+      videoId: "systeme-immunitaire",
     },
   ];
 
@@ -138,13 +270,31 @@ const Resources: React.FC = () => {
     },
   ];
 
-  const categories = ["Tous", "Hématologie", "Biochimie", "Prévention", "Conseils", "Éducation", "Témoignages", "Recherche"];
+  const categories = ["Tous", "Hématologie", "Biochimie", "Prévention", "Cardiologie", "Gynécologie", "Endocrinologie", "Néphrologie", "Nutrition", "Immunologie", "Conseils", "Éducation", "Recherche"];
 
   // State for FAQ accordion
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  // Download function with tracking
+  const handleDownload = (downloadUrl: string, filename: string, title: string) => {
+    // Create download link
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = filename;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Track download (in a real app, this would send to analytics)
+    console.log(`Guide téléchargé: ${title} - ${filename}`);
+    
+    // Show success message (optional)
+    // You could add a toast notification here
   };
 
   const faqs = [
@@ -286,7 +436,10 @@ const Resources: React.FC = () => {
                     <span>{guide.pages}</span>
                   </div>
                   
-                  <Button className="w-full gradient-primary text-white">
+                  <Button 
+                    className="w-full gradient-primary text-white"
+                    onClick={() => handleDownload(guide.downloadUrl, guide.filename, guide.title)}
+                  >
                     <Download size={18} className="mr-2" />
                     Télécharger Gratuitement
                   </Button>
@@ -307,22 +460,46 @@ const Resources: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {videos.map((video, index) => (
               <Card key={index} className="hover-lift shadow-card border-border/50 overflow-hidden">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <Video size={48} className="text-primary" />
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
+                  {video.thumbnail ? (
+                    <img 
+                      src={video.thumbnail} 
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <Video size={48} className="text-primary" />
+                  )}
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors cursor-pointer">
+                      <Video size={24} className="text-primary ml-1" />
+                    </div>
+                  </div>
+                  <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-sm">
+                    {video.duration}
+                  </div>
                 </div>
                 <div className="p-6">
                   <Badge className="mb-3">{video.category}</Badge>
                   <h3 className="text-lg font-bold mb-2">{video.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{video.description}</p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                    <span>{video.duration}</span>
-                    <span>•</span>
                     <span>{video.views} vues</span>
                   </div>
-                  <Button variant="outline" className="w-full">
-                    Regarder
+                  <Button 
+                    variant="outline" 
+                    className="w-full hover:bg-primary hover:text-white transition-colors"
+                    onClick={() => {
+                      // In a real app, this would open a video player or navigate to video page
+                      console.log(`Playing video: ${video.title} (ID: ${video.videoId})`);
+                      alert(`Lecture de la vidéo: ${video.title}\n\nDans une application réelle, ceci ouvrirait le lecteur vidéo.`);
+                    }}
+                  >
+                    <Video size={16} className="mr-2" />
+                    Regarder la vidéo
                   </Button>
                 </div>
               </Card>

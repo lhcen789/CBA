@@ -1,0 +1,45 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#F8FAFC"/>
+  
+  <!-- Medical background -->
+  <rect x="50" y="50" width="300" height="200" rx="20" fill="#F0F9FF"/>
+  
+  <!-- Kidneys -->
+  <path d="M150 100 Q140 90 130 100 Q125 120 130 140 Q135 160 150 170 Q165 160 170 140 Q175 120 170 100 Q160 90 150 100 Z" fill="#DC2626"/>
+  <path d="M250 100 Q240 90 230 100 Q225 120 230 140 Q235 160 250 170 Q265 160 270 140 Q275 120 270 100 Q260 90 250 100 Z" fill="#DC2626"/>
+  
+  <!-- Kidney details -->
+  <ellipse cx="150" cy="135" rx="8" ry="15" fill="#B91C1C"/>
+  <ellipse cx="250" cy="135" rx="8" ry="15" fill="#B91C1C"/>
+  
+  <!-- Blood vessels -->
+  <path d="M150 100 Q180 90 200 100 Q220 90 250 100" stroke="#EF4444" stroke-width="3" fill="none"/>
+  <path d="M150 170 Q180 180 200 170 Q220 180 250 170" stroke="#3B82F6" stroke-width="3" fill="none"/>
+  
+  <!-- Test tube with urine -->
+  <rect x="320" y="120" width="15" height="80" rx="7" fill="#FCD34D"/>
+  <rect x="320" y="120" width="15" height="20" fill="#FEF3C7"/>
+  
+  <!-- Creatinine molecule -->
+  <circle cx="100" cy="200" r="6" fill="#059669"/>
+  <text x="100" y="205" text-anchor="middle" fill="white" font-size="8" font-weight="bold">Cr</text>
+  
+  <!-- Urea molecule -->
+  <circle cx="130" cy="210" r="6" fill="#7C3AED"/>
+  <text x="130" y="215" text-anchor="middle" fill="white" font-size="7" font-weight="bold">Urea</text>
+  
+  <!-- Filtration arrows -->
+  <path d="M180 120 L180 140" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M220 120 L220 140" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="200" y="40" text-anchor="middle" fill="#1E293B" font-size="18" font-weight="bold">Fonction Rénale</text>
+</svg>

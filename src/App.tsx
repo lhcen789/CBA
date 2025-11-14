@@ -8,7 +8,16 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import AboutPage from "./pages/AboutPage";
 import Blog from "./pages/Blog";
-import BlogPost from "./pages/blog/[slug]";
+import DepistagePrecoceDiabete from "./pages/blog/DepistagePrecoceDiabete";
+import ResultatsAnalysesSanguines from "./pages/blog/ResultatsAnalysesSanguines";
+import BilanThyroidien from "./pages/blog/BilanThyroidien";
+import CholesterolAmiEnnemi from "./pages/blog/CholesterolAmiEnnemi";
+import BilanPrenuptial from "./pages/blog/BilanPrenuptial";
+import TestsCovid19 from "./pages/blog/TestsCovid19";
+import HemogrammeDecrypte from "./pages/blog/HemogrammeDecrypte";
+import PreparationAnalyses from "./pages/blog/PreparationAnalyses";
+import PreventionInfectionsUrinaires from "./pages/blog/PreventionInfectionsUrinaires";
+import FertiliteAnalysesEssentielles from "./pages/blog/FertiliteAnalysesEssentielles";
 import Careers from "./pages/Careers";
 import ContactPage from "./pages/ContactPage";
 import Resources from "./pages/Resources";
@@ -39,7 +48,16 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/blog/depistage-precoce-diabete" element={<DepistagePrecoceDiabete />} />
+          <Route path="/blog/resultats-analyses-sanguines" element={<ResultatsAnalysesSanguines />} />
+          <Route path="/blog/bilan-thyroidien" element={<BilanThyroidien />} />
+          <Route path="/blog/cholesterol-ami-ennemi" element={<CholesterolAmiEnnemi />} />
+          <Route path="/blog/bilan-prenuptial" element={<BilanPrenuptial />} />
+          <Route path="/blog/tests-covid-19" element={<TestsCovid19 />} />
+          <Route path="/blog/hemogramme-decrypte" element={<HemogrammeDecrypte />} />
+          <Route path="/blog/preparation-analyses" element={<PreparationAnalyses />} />
+          <Route path="/blog/prevention-infections-urinaires" element={<PreventionInfectionsUrinaires />} />
+          <Route path="/blog/fertilite-analyses-essentielles" element={<FertiliteAnalysesEssentielles />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resources" element={<Resources />} />
