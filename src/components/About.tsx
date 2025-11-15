@@ -57,20 +57,6 @@ export const About = () => {
           })}
         </div>
 
-        <div className="mt-20 grid md:grid-cols-3 gap-8 text-center">
-          <div className="p-8 rounded-2xl bg-secondary">
-            <div className="text-5xl font-bold text-gradient mb-2">99%</div>
-            <div className="text-lg text-muted-foreground">Satisfaction Patients</div>
-          </div>
-          <div className="p-8 rounded-2xl bg-secondary">
-            <div className="text-5xl font-bold text-gradient mb-2">24h</div>
-            <div className="text-lg text-muted-foreground">Résultats en Urgence</div>
-          </div>
-          <div className="p-8 rounded-2xl bg-secondary">
-            <div className="text-5xl font-bold text-gradient mb-2">200+</div>
-            <div className="text-lg text-muted-foreground">Types d'Analyses</div>
-          </div>
-        </div>
       </div>
     </section>
   );

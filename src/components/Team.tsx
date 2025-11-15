@@ -111,23 +111,6 @@ export const Team = () => {
             </Card>
           ))}
         </div>
-
-        <div className="bg-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-sm">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center">
-            <div className="p-3 sm:p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">30+</div>
-              <div className="text-sm sm:text-base md:text-lg text-muted-foreground">Professionnels</div>
-            </div>
-            <div className="p-3 sm:p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">50+</div>
-              <div className="text-sm sm:text-base md:text-lg text-muted-foreground">Types d'Analyses</div>
-            </div>
-            <div className="col-span-2 sm:col-auto p-3 sm:p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">15+</div>
-              <div className="text-sm sm:text-base md:text-lg text-muted-foreground">Années d'Expérience</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

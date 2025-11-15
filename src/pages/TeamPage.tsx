@@ -65,18 +65,64 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
-      <main className="flex-1 pt-20 sm:pt-24 pb-12 sm:pb-16">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 md:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Notre <span className="text-gradient">Équipe</span>
-            </h1>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des professionnels qualifiés et dévoués à votre service
-            </p>
-          </div>
+      <main className="flex-1">
+        <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 gradient-hero overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+          <div className="absolute top-0 right-0 w-60 sm:w-72 md:w-[26rem] h-60 sm:h-72 md:h-[26rem] bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-52 sm:w-64 md:w-[24rem] h-52 sm:h-64 md:h-[24rem] bg-secondary/20 rounded-full blur-3xl"></div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mx-auto text-sm font-medium">
+                Notre Équipe Pluridisciplinaire
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+                Des Spécialistes <span className="text-gradient">à Votre Écoute</span>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                Une équipe expérimentée de biologistes, techniciens et coordinateurs qui travaillent ensemble pour garantir un accompagnement humain et des analyses de la plus haute qualité.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
+                {[{
+                  value: "25+",
+                  label: "Professionnels Qualifiés"
+                }, {
+                  value: "150+",
+                  label: "Années d'Expérience Cumulées"
+                }, {
+                  value: "100%",
+                  label: "Engagement Qualité"
+                }].map((item, index) => (
+                  <div
+                    key={index}
+                    className="rounded-2xl bg-background/80 backdrop-blur-sm border border-border/40 shadow-lg shadow-primary/5 p-5 sm:p-6"
+                  >
+                    <div className="text-3xl sm:text-4xl font-bold text-gradient mb-2">
+                      {item.value}
+                    </div>
+                    <div className="text-sm sm:text-base text-muted-foreground">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 sm:py-16 md:py-20">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                Rencontrez Nos <span className="text-gradient">Spécialistes</span>
+              </h2>
+              <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+                Chaque membre de l'équipe met son expertise au service de votre santé pour un accompagnement complet et personnalisé.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {team.map((member) => (
               <Card 
                 key={member.name} 
@@ -148,21 +194,8 @@ export default function TeamPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 bg-card p-6 sm:p-8 rounded-xl border border-border/50">
-            <div className="text-center p-4 sm:p-6 bg-background/50 rounded-lg hover:shadow-sm transition-shadow">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient mb-2">25+</div>
-              <div className="text-sm sm:text-base text-muted-foreground">Professionnels Qualifiés</div>
-            </div>
-            <div className="text-center p-4 sm:p-6 bg-background/50 rounded-lg hover:shadow-sm transition-shadow">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient mb-2">150+</div>
-              <div className="text-sm sm:text-base text-muted-foreground">Années d'Expérience</div>
-            </div>
-            <div className="text-center p-4 sm:p-6 bg-background/50 rounded-lg hover:shadow-sm transition-shadow">
-              <div className="text-3xl sm:text-4xl font-bold text-gradient mb-2">100%</div>
-              <div className="text-sm sm:text-base text-muted-foreground">Accréditation Qualité</div>
-            </div>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

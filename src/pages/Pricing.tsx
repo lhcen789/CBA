@@ -277,16 +277,42 @@ export default function Pricing() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      <main className="flex-1 pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold">
-              Nos <span className="text-gradient">Tarifs</span>
+      
+      {/* Hero Section */}
+      <section className="relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+              Tarification Transparente
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Nos <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Tarifs</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des bilans adaptés à vos besoins avec des prix transparents
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
+              Des analyses médicales de qualité à des prix transparents et compétitifs. 
+              Découvrez nos tarifs détaillés pour tous types d'examens.
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="gradient-primary text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                Prendre Rendez-vous
+              </Button>
+              <Button size="lg" variant="outline" className="px-8 py-4 rounded-full border-primary/20 hover:bg-primary/5 transition-all duration-300">
+                Demander un Devis
+              </Button>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <main className="flex-1 pb-16">
+        <div className="container mx-auto px-4">
 
           <div className="space-y-12">
             <div>

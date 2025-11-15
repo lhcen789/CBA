@@ -366,24 +366,43 @@ const Resources: React.FC = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              Ressources <span className="text-gradient">Santé</span>
+      <section className="relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+              Centre de Ressources
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Ressources <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Santé</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
               Découvrez notre collection de guides, conseils et informations pour mieux 
-              comprendre vos analyses médicales et votre santé.
+              comprendre vos analyses médicales et prendre soin de votre santé.
             </p>
             
             <div className="max-w-2xl mx-auto">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
-                <Input
-                  placeholder="Rechercher des ressources..."
-                  className="pl-12 h-14 text-lg"
-                />
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+                <div className="relative bg-background/80 backdrop-blur-sm rounded-2xl border border-border/50 p-2">
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary">
+                      <Search size={20} />
+                    </div>
+                    <Input
+                      placeholder="Rechercher guides, vidéos, conseils..."
+                      className="border-0 bg-transparent text-lg placeholder:text-muted-foreground/70 focus-visible:ring-0"
+                    />
+                    <Button className="gradient-primary text-white px-6 py-3 rounded-xl">
+                      Rechercher
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

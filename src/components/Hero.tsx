@@ -7,7 +7,7 @@ const heroImage = "https://images.unsplash.com/photo-1579154204601-01588f351e67?
 
 export const Hero = () => {
   return (
-    <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center gradient-hero pt-16 sm:pt-20 md:pt-24">
+    <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center gradient-hero pt-2 sm:pt-4 md:pt-6">
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <div className="space-y-6 sm:space-y-8 max-w-2xl mx-auto lg:mx-0">

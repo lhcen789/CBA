@@ -1,12 +1,16 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2, X } from "lucide-react";
 // Lab-related images from Unsplash (free to use)
 const project1 = "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
 const project2 = "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
 const project3 = "https://images.unsplash.com/photo-1581595219315-a187dd40c322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80";
 
 export const Projects = () => {
+  const [activeAnalysis, setActiveAnalysis] = useState<number | null>(null);
+
   const analyses = [
     {
       image: project1,
@@ -14,6 +18,11 @@ export const Projects = () => {
       title: "Check-up Complet",
       description: "Bilan sanguin complet pour évaluer votre état de santé général : NFS, glycémie, bilan hépatique et rénal.",
       tags: ["Hématologie", "Biochimie", "Prévention"],
+      details: [
+        "Suivi des paramètres essentiels : cholestérol, glycémie, fonction rénale et hépatique.",
+        "Interprétation personnalisée par un biologiste médical avec recommandations pratiques.",
+        "Idéal pour un contrôle annuel ou avant une reprise d'activité sportive."
+      ],
     },
     {
       image: project2,
@@ -21,6 +30,11 @@ export const Projects = () => {
       title: "Bilan Cardiaque",
       description: "Analyses spécialisées pour évaluer les risques cardiovasculaires : cholestérol, triglycérides, CRP.",
       tags: ["Biochimie", "Prévention", "Cardiologie"],
+      details: [
+        "Évaluation complète du profil lipidique (HDL, LDL, triglycérides).",
+        "Mesure des marqueurs inflammatoires et du risque d'accident cardio-vasculaire.",
+        "Plan de suivi proposé en collaboration avec votre cardiologue."
+      ],
     },
     {
       image: project3,
@@ -28,6 +42,11 @@ export const Projects = () => {
       title: "Bilan Hormonal",
       description: "Dosages hormonaux complets pour le diagnostic et suivi des troubles endocriniens et de fertilité.",
       tags: ["Hormonologie", "Endocrinologie", "Fertilité"],
+      details: [
+        "Analyses ciblées pour la thyroïde, l'axe corticotrope et les hormones sexuelles.",
+        "Accompagnement des parcours de fertilité et de PMA avec protocoles adaptés.",
+        "Compte-rendu détaillé avec recommandations de prise en charge."
+      ],
     },
   ];
 
@@ -83,6 +102,7 @@ export const Projects = () => {
                   <Button 
                     size="sm" 
                     className="gradient-primary text-white text-xs sm:text-sm h-8 sm:h-9 px-3 sm:px-4"
+                    onClick={() => setActiveAnalysis(index)}
                   >
                     Plus d'Infos
                     <CheckCircle2 className="ml-1.5 w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -115,6 +135,44 @@ export const Projects = () => {
             </Card>
           ))}
         </div>
+
+        {activeAnalysis !== null && (
+          <div className="max-w-3xl mx-auto mb-12">
+            <Card className="relative p-6 sm:p-8 border-border/60 shadow-lg">
+              <button
+                type="button"
+                onClick={() => setActiveAnalysis(null)}
+                className="absolute top-4 right-4 text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Fermer les informations"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <p className="text-sm font-semibold text-primary mb-2">
+                {analyses[activeAnalysis].category}
+              </p>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">
+                {analyses[activeAnalysis].title}
+              </h3>
+              <p className="text-muted-foreground mb-5">
+                {analyses[activeAnalysis].description}
+              </p>
+              <ul className="space-y-3 text-sm sm:text-base text-foreground/90">
+                {analyses[activeAnalysis].details?.map((detail, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-primary"></span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Button asChild className="gradient-primary text-white">
+                  <Link to="/appointments">Prendre Rendez-vous</Link>
+                </Button>
+              </div>
+            </Card>
+          </div>
+        )}
 
         <div className="bg-secondary/30 rounded-3xl p-12">
           <h3 className="text-3xl font-bold mb-8 text-center">Bilans Populaires</h3>

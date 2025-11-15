@@ -92,30 +92,46 @@ const Portfolio = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-20 gradient-hero">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Nos <span className="text-gradient">Équipements</span>
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 gradient-hero overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+        <div className="absolute top-0 right-0 w-72 sm:w-80 md:w-[28rem] h-72 sm:h-80 md:h-[28rem] bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-60 sm:w-72 md:w-[26rem] h-60 sm:h-72 md:h-[26rem] bg-secondary/20 rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-6 sm:space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 w-fit mx-auto text-sm font-medium">
+              Technologies & Laboratoire
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+              Nos <span className="text-gradient">Équipements</span> de Pointe
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              Découvrez notre parc technologique de pointe qui garantit la précision 
-              et la fiabilité de vos analyses médicales.
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              Découvrez notre parc technologique certifié, sélectionné pour assurer la précision, la rapidité et la fiabilité de chaque analyse réalisée au laboratoire.
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-6 md:gap-8 text-center">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">15+</div>
-                <div className="text-sm md:text-base text-muted-foreground">Automates Modernes</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">500+</div>
-                <div className="text-sm md:text-base text-muted-foreground">Analyses Disponibles</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient">99%</div>
-                <div className="text-sm md:text-base text-muted-foreground">Précision</div>
-              </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
+              {[{
+                value: "15+",
+                label: "Automates Modernes"
+              }, {
+                value: "500+",
+                label: "Paramètres Disponibles"
+              }, {
+                value: "99%",
+                label: "Précision Vérifiée"
+              }].map((item, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl bg-background/80 backdrop-blur-sm border border-border/40 shadow-lg shadow-primary/5 p-5 sm:p-6"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-gradient mb-2">
+                    {item.value}
+                  </div>
+                  <div className="text-sm sm:text-base text-muted-foreground">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

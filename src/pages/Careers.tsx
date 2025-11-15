@@ -154,17 +154,34 @@ const Careers = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 gradient-hero">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              Join Our <span className="text-gradient">Team</span>
+      <section className="relative pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-20 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+              Rejoignez-nous
+            </div>
+            
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Votre <span className="text-gradient bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Carrière</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              We're looking for talented, passionate individuals who want to create 
-              exceptional digital experiences and grow their careers in a supportive, 
-              innovative environment.
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
+              Rejoignez une équipe passionnée de professionnels de la santé dans un environnement 
+              stimulant et innovant. Développez vos compétences au service de la santé publique.
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="gradient-primary text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                Voir les Postes
+              </Button>
+              <Button size="lg" variant="outline" className="px-8 py-4 rounded-full border-primary/20 hover:bg-primary/5 transition-all duration-300">
+                Candidature Spontanée
+              </Button>
+            </div>
           </div>
         </div>
       </section>
