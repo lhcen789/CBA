@@ -7,6 +7,20 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, User, ArrowRight, Search } from "lucide-react";
 
+// High-quality medical images from Unsplash
+const blogImages = {
+  featured: "https://images.unsplash.com/photo-1505751172876-faee0f3dda60?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  bloodTest: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  thyroid: "https://images.unsplash.com/photo-1579165466743-6daa6a6cf2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  uti: "https://images.unsplash.com/photo-1581595219315-a187dd160949?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  prenatal: "https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  cholesterol: "https://images.unsplash.com/photo-1512672370729-c319652e3d44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  bloodCount: "https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  covid: "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  fertility: "https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  preparation: "https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+};
+
 const Blog = () => {
   const featuredPost = {
     id: "depistage-precoce-diabete",
@@ -16,7 +30,7 @@ const Blog = () => {
     date: "15 Décembre 2024",
     readTime: "8 min de lecture",
     author: "Dr. Amina Benali",
-    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: blogImages.featured,
   };
 
   const posts = [
@@ -28,7 +42,7 @@ const Blog = () => {
       date: "12 Décembre 2024",
       readTime: "6 min de lecture",
       author: "Dr. Karim Alami",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: blogImages.bloodTest,
     },
     {
       id: "bilan-thyroidien",
@@ -38,7 +52,7 @@ const Blog = () => {
       date: "10 Décembre 2024",
       readTime: "10 min de lecture",
       author: "Dr. Amina Benali",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1579165466743-6daa6a6cf2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "prevention-infections-urinaires",
@@ -48,7 +62,7 @@ const Blog = () => {
       date: "8 Décembre 2024",
       readTime: "5 min de lecture",
       author: "Dr. Hassan Idrissi",
-      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: blogImages.uti,
     },
     {
       id: "bilan-prenuptial",
@@ -58,7 +72,7 @@ const Blog = () => {
       date: "5 Décembre 2024",
       readTime: "7 min de lecture",
       author: "Dr. Amina Benali",
-      image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: blogImages.prenatal,
     },
     {
       id: "cholesterol-ami-ennemi",
@@ -68,7 +82,7 @@ const Blog = () => {
       date: "3 Décembre 2024",
       readTime: "12 min de lecture",
       author: "Dr. Karim Alami",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1579165466743-6daa6a6cf2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "hemogramme-decrypte",
@@ -78,7 +92,7 @@ const Blog = () => {
       date: "1 Décembre 2024",
       readTime: "9 min de lecture",
       author: "Dr. Hassan Idrissi",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: blogImages.bloodCount,
     },
     {
       id: "tests-covid-19",
@@ -88,7 +102,7 @@ const Blog = () => {
       date: "28 Novembre 2024",
       readTime: "11 min de lecture",
       author: "Dr. Amina Benali",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: blogImages.covid,
     },
     {
       id: "fertilite-analyses-essentielles",
@@ -98,7 +112,7 @@ const Blog = () => {
       date: "25 Novembre 2024",
       readTime: "6 min de lecture",
       author: "Dr. Karim Alami",
-      image: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1579165466743-6daa6a6cf2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "preparation-analyses",
@@ -108,7 +122,7 @@ const Blog = () => {
       date: "22 Novembre 2024",
       readTime: "15 min de lecture",
       author: "Dr. Hassan Idrissi",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: blogImages.preparation,
     },
   ];
 

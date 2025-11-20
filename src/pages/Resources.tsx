@@ -6,14 +6,15 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FileText, Video, Book, Download, Search, Heart, Activity, Stethoscope, Calendar, Clock, MessageSquare, BookOpen, CheckCircle, ChevronDown, Send } from "lucide-react";
+import { FileText, Video as VideoIcon, Book, Download, Search, Heart, Activity, Stethoscope, Calendar, Clock, MessageSquare, BookOpen, CheckCircle, ChevronDown, Send } from "lucide-react";
+import VideoPlayer from "@/components/VideoPlayer";
 
 const Resources: React.FC = () => {
   const guides = [
     {
       icon: FileText,
       title: "Guide Complet des Analyses Sanguines",
-      description: "Comprenez vos résultats d'analyses sanguines",
+      description: "Guide exhaustif sur l'hématologie couvrant : numération formule sanguine complète (NFS), hémogramme, bilan ferrique, coagulation, et marqueurs inflammatoires. Inclut des tableaux de valeurs de référence par âge et sexe, des cas cliniques pratiques, et des algorithmes d'interprétation des résultats anormaux. Comprend également une section sur les pièges d'interprétation et les interférences pré-analytiques.",
       type: "Guide PDF",
       pages: "45 pages",
       category: "Hématologie",
@@ -23,7 +24,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Préparer Votre Bilan de Santé",
-      description: "Conseils et recommandations avant vos analyses",
+      description: "Guide pratique complet comprenant : préparation optimale selon le type de prélèvement (sang, urine, selles), durée de jeûne requise, médicaments à éviter, documents médicaux à préparer, et questions fréquentes. Inclut un tableau récapitulatif par type d'analyse, un espace pour noter ses rendez-vous, et des conseils pour faciliter le prélèvement (hydratation, vêtements adaptés, etc.).",
       type: "Guide PDF",
       pages: "28 pages",
       category: "Prévention",
@@ -33,7 +34,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Comprendre les Analyses Biochimiques",
-      description: "Interprétation des paramètres biochimiques",
+      description: "Décryptage approfondi des analyses biochimiques : enzymes hépatiques, bilirubine, protéines plasmatiques, électrolytes, bilan lipidique, et marqueurs cardiaques. Pour chaque paramètre : valeurs normales, causes d'augmentation/diminution, interprétation en contexte clinique, et arbres décisionnels. Inclut des cas pratiques avec interprétation guidée.",
       type: "Guide PDF",
       pages: "52 pages",
       category: "Biochimie",
@@ -43,7 +44,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Dépistage Précoce du Diabète",
-      description: "Guide complet sur le dépistage et la prévention du diabète",
+      description: "Approche complète du dépistage du diabète : critères diagnostiques actualisés, interprétation de l'HbA1c, HGPO, glycémie à jeun et post-prandiale. Inclut des algorithmes de prise en charge, des conseils nutritionnels personnalisables, des modèles de suivi glycémique, et des recommandations pour la prévention du diabète de type 2 basées sur les dernières études scientifiques.",
       type: "Guide PDF",
       pages: "38 pages",
       category: "Prévention",
@@ -53,7 +54,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Santé Cardiovasculaire",
-      description: "Bilan lipidique et prévention des maladies cardiaques",
+      description: "Guide complet d'évaluation du risque cardiovasculaire : interprétation du bilan lipidique (cholestérol total, LDL, HDL, triglycérides), marqueurs inflammatoires (CRPus), et nouveaux facteurs de risque. Inclut des recommandations thérapeutiques actualisées, des conseils nutritionnels détaillés, des exemples de plans d'activité physique, et des outils de suivi personnalisé des facteurs de risque.",
       type: "Guide PDF",
       pages: "42 pages",
       category: "Cardiologie",
@@ -63,7 +64,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Analyses de Grossesse",
-      description: "Suivi médical complet pendant la grossesse",
+      description: "Suivi complet de la grossesse : calendrier détaillé des examens biologiques par trimestre, interprétation des marqueurs sériques du 1er trimestre, dépistage de la trisomie 21, diabète gestationnel, et infections à risque. Inclut un tableau de vaccination recommandée, des conseils nutritionnels spécifiques, et un espace pour noter les résultats des examens.",
       type: "Guide PDF",
       pages: "35 pages",
       category: "Gynécologie",
@@ -73,7 +74,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Bilan Thyroïdien Complet",
-      description: "Comprendre le fonctionnement de votre thyroïde",
+      description: "Approche approfondie de la biologie thyroïdienne : physiopathologie, interprétation des dosages (TSH, T3, T4, anticorps anti-TPO, anti-thyroglobuline), et stratégies diagnostiques. Inclut des arbres décisionnels pour l'exploration des dysthyroïdies, des cas cliniques commentés, et des recommandations pour le suivi des traitements (lévothyroxine, antithyroïdiens de synthèse).",
       type: "Guide PDF",
       pages: "29 pages",
       category: "Endocrinologie",
@@ -83,7 +84,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Fonction Rénale et Urologie",
-      description: "Évaluation complète de la santé de vos reins",
+      description: "Évaluation complète de la fonction rénale : formules de calcul du DFG (CKD-EPI, MDRD), interprétation de la protéinurie, hématurie, et sédiment urinaire. Guide pratique pour le suivi des insuffisances rénales chroniques, avec algorithmes décisionnels, tableaux de classification KDIGO, et conseils pour préserver la fonction rénale (régime alimentaire, hydratation, médicaments à risque).",
       type: "Guide PDF",
       pages: "33 pages",
       category: "Néphrologie",
@@ -93,7 +94,7 @@ const Resources: React.FC = () => {
     {
       icon: FileText,
       title: "Vitamines et Minéraux",
-      description: "Bilan nutritionnel et carences vitaminiques",
+      description: "Guide complet des carences nutritionnelles : signes cliniques, interprétation des dosages (vitamines A, B, C, D, E, K, fer, zinc, sélénium, etc.), et stratégies de supplémentation personnalisées. Inclut des tableaux des apports nutritionnels conseillés, des listes d'aliments riches en micronutriments, des conseils pour améliorer l'absorption, et des mises en garde contre les surdosages.",
       type: "Guide PDF",
       pages: "31 pages",
       category: "Nutrition",
@@ -274,9 +275,35 @@ const Resources: React.FC = () => {
 
   // State for FAQ accordion
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  
+  // State for video player
+  const [currentVideo, setCurrentVideo] = useState<{
+    isOpen: boolean;
+    videoId: string;
+    title: string;
+  }>({
+    isOpen: false,
+    videoId: "",
+    title: "",
+  });
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+  
+  const openVideoPlayer = (videoId: string, title: string) => {
+    setCurrentVideo({
+      isOpen: true,
+      videoId,
+      title,
+    });
+    
+    // Pause any playing video when opening a new one
+    document.querySelectorAll('video').forEach(video => video.pause());
+  };
+  
+  const closeVideoPlayer = () => {
+    setCurrentVideo(prev => ({ ...prev, isOpen: false }));
   };
 
   // Download function with tracking
@@ -490,11 +517,17 @@ const Resources: React.FC = () => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <Video size={48} className="text-primary" />
+                    <VideoIcon size={48} className="text-primary" />
                   )}
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors cursor-pointer">
-                      <Video size={24} className="text-primary ml-1" />
+                  <div 
+                    className="absolute inset-0 bg-black/20 flex items-center justify-center cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openVideoPlayer(video.videoId, video.title);
+                    }}
+                  >
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                      <VideoIcon size={24} className="text-primary ml-1" />
                     </div>
                   </div>
                   <div className="absolute top-3 right-3 bg-black/70 text-white px-2 py-1 rounded text-sm">
@@ -511,13 +544,9 @@ const Resources: React.FC = () => {
                   <Button 
                     variant="outline" 
                     className="w-full hover:bg-primary hover:text-white transition-colors"
-                    onClick={() => {
-                      // In a real app, this would open a video player or navigate to video page
-                      console.log(`Playing video: ${video.title} (ID: ${video.videoId})`);
-                      alert(`Lecture de la vidéo: ${video.title}\n\nDans une application réelle, ceci ouvrirait le lecteur vidéo.`);
-                    }}
+                    onClick={() => openVideoPlayer(video.videoId, video.title)}
                   >
-                    <Video size={16} className="mr-2" />
+                    <VideoIcon size={16} className="mr-2" />
                     Regarder la vidéo
                   </Button>
                 </div>
@@ -526,6 +555,15 @@ const Resources: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Video Player Modal */}
+      {currentVideo.isOpen && (
+        <VideoPlayer 
+          videoId={currentVideo.videoId}
+          title={currentVideo.title}
+          onClose={closeVideoPlayer}
+        />
+      )}
 
       {/* Health Topics */}
       <section className="py-20 bg-background">
@@ -599,6 +637,34 @@ const Resources: React.FC = () => {
             <h2 className="text-4xl font-bold mb-4">Témoignages</h2>
             <p className="text-xl text-muted-foreground">
               Ce que nos patients disent de nous
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="p-6 hover-lift shadow-card border-border/50 flex flex-col h-full">
+                <div className="flex mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-primary text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4 flex-grow">"{testimonial.content}"</p>
+                <div className="pt-3 border-t border-border/30">
+                  <p className="font-bold">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Publications */}
+      <section className="py-20 bg-secondary/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Publications</h2>
+            <p className="text-xl text-muted-foreground">
+              Nos publications récentes
             </p>
           </div>
           

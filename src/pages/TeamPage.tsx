@@ -16,9 +16,9 @@ export default function TeamPage() {
       certifications: ["Certification ISO 15189", "Formation continue CNOPS"]
     },
     {
-      name: "Dr. Ahmed Zemrani",
+      name: "Dr. Moussa Et-tahery",
       role: "Biologiste Senior",
-      speciality: "Biochimie",
+      speciality: "Bactériologie",
       bio: "Expert en biochimie clinique avec 10 ans d'expérience. Formé en US et au Maroc dans les meilleures institutions.",
       expertise: ["Biochimie", "Toxicologie", "Diabétologie"],
       education: "PhD Biochimie, Université Paris-Sud",

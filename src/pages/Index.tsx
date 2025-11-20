@@ -10,7 +10,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { CheckCircle, Clock, Shield, Award } from "lucide-react";
+import { CheckCircle, Clock, Shield, Award, Zap, Users, TrendingUp, Heart } from "lucide-react";
 
 const Index = () => {
   const testimonials = [
@@ -57,6 +57,52 @@ const Index = () => {
     }
   ];
 
+  const statistics = [
+    {
+      number: "15+",
+      label: "Années d'Expérience",
+      icon: TrendingUp
+    },
+    {
+      number: "30+",
+      label: "Professionnels Qualifiés",
+      icon: Users
+    },
+    {
+      number: "50+",
+      label: "Types d'Analyses",
+      icon: Zap
+    },
+    {
+      number: "10,000+",
+      label: "Patients Satisfaits",
+      icon: Heart
+    }
+  ];
+
+  const featuredServices = [
+    {
+      title: "Analyses Sanguines Complètes",
+      description: "Bilan complet de santé avec NFS, glycémie, bilan lipidique et bien plus",
+      icon: CheckCircle
+    },
+    {
+      title: "Dépistage Précoce",
+      description: "Détection précoce des maladies chroniques comme le diabète et les maladies cardiovasculaires",
+      icon: Heart
+    },
+    {
+      title: "Analyses Microbiologiques",
+      description: "Tests d'identification de bactéries, virus et parasites pour un diagnostic précis",
+      icon: Zap
+    },
+    {
+      title: "Analyses Hormonales",
+      description: "Dosages hormonaux complets pour évaluer votre santé endocrinienne",
+      icon: TrendingUp
+    }
+  ];
+
   const faqs = [
     {
       question: "Comment prendre rendez-vous ?",
@@ -82,6 +128,71 @@ const Index = () => {
       <Hero />
       <About />
       <Services />
+
+      {/* Statistics Section */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-r from-primary/10 to-primary/5">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            {statistics.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1 sm:mb-2">
+                  {stat.number}
+                </div>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Services Section */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto text-center mb-10 sm:mb-14 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-foreground">
+              Nos Services <span className="text-gradient">Principaux</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez nos services de laboratoire les plus demandés
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
+            {featuredServices.map((service, index) => (
+              <Card 
+                key={index} 
+                className="group p-5 sm:p-6 md:p-7 lg:p-8 hover-lift border-border/50 transition-all duration-300 hover:shadow-md hover:border-primary/20 flex flex-col h-full"
+              >
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full gradient-primary flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-foreground">
+                  {service.title}
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed flex-grow">
+                  {service.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 sm:mt-12 md:mt-14 lg:mt-16">
+            <Button 
+              className="gradient-primary text-white hover:opacity-90 px-6 sm:px-8 py-2 sm:py-3"
+              asChild
+            >
+              <Link to="/services">
+                Voir Tous les Services
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
       
       {/* Advantages Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-secondary/30">

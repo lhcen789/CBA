@@ -161,10 +161,15 @@ const ContactPage = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-primary text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Prendre Rendez-vous
+              <Button size="lg" className="gradient-primary text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                <Link to="/appointments">Prendre Rendez-vous</Link>
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-4 rounded-full border-primary/20 hover:bg-primary/5 transition-all duration-300">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="px-8 py-4 rounded-full border-primary/20 hover:bg-primary/5 transition-all duration-300"
+                onClick={() => document.getElementById('contact-faq')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Voir la FAQ
               </Button>
             </div>
@@ -175,17 +180,51 @@ const ContactPage = () => {
       {/* Contact Info - Single Card */}
       <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="mb-12 sm:mb-16 md:mb-20">
-            <Card className="p-6 sm:p-8 border-border/50 hover:border-primary/20 transition-all duration-300 text-center">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                <Phone className="text-white w-6 h-6 sm:w-7 sm:h-7" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto mb-12">
+            <Card className="p-6 sm:p-7 lg:p-8 border-border/50 hover:border-primary/20 transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
+                  <Phone className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-base sm:text-lg text-foreground mb-1">Téléphone</h3>
+                  <div className="space-y-1">
+                    <a href="tel:+212528XXXXXX" className="text-primary hover:underline text-sm sm:text-base font-medium">+212 528-XX-XX-XX</a>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Lun–Sam, 8h–19h</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">Contact</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground mb-4">Nous répondons rapidement pendant nos horaires d'ouverture</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
-                <a href="tel:+212528XXXXXX" className="text-sm sm:text-base text-primary hover:underline font-medium">+212 528-XX-XX-XX</a>
-                <span className="hidden sm:inline text-muted-foreground">•</span>
-                <a href="mailto:contact@centrebiologie-agadir.ma" className="text-sm sm:text-base text-primary hover:underline font-medium break-all">contact@centrebiologie-agadir.ma</a>
+            </Card>
+
+            <Card className="p-6 sm:p-7 lg:p-8 border-border/50 hover:border-primary/20 transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
+                  <Mail className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-base sm:text-lg text-foreground mb-1">Email</h3>
+                  <div className="space-y-1">
+                    <a href="mailto:contact@centrebiologie-agadir.ma" className="text-primary hover:underline text-sm sm:text-base font-medium break-all">contact@centrebiologie-agadir.ma</a>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Réponse sous 24h</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 sm:p-7 lg:p-8 border-border/50 hover:border-primary/20 transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg gradient-primary flex items-center justify-center flex-shrink-0">
+                  <MapPin className="text-white w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-base sm:text-lg text-foreground mb-1">Adresse</h3>
+                  <p className="text-sm sm:text-base text-foreground">42 Av. Kadi Ayad, Agadir 80000</p>
+                  <div className="pt-3">
+                    <Button variant="outline" asChild className="text-sm">
+                      <a href="https://www.google.com/maps?q=42%20Av.%20Kadi%20Ayad,%20Agadir%2080000" target="_blank" rel="noopener noreferrer">Itinéraire</a>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
@@ -337,7 +376,7 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
+      <section id="contact-faq" className="py-12 sm:py-16 md:py-20 bg-secondary/30">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-foreground">
